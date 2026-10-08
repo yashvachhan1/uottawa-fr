@@ -20,7 +20,7 @@
   <!-- ============================================================ HEADER -->
   <header class="site-header" id="site-header">
     <div class="container">
-      <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'uOttawa home', 'uottawa-online-fr' ); ?>">
+      <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Accueil uOttawa', 'uottawa-online-fr' ); ?>">
         <img class="logo__img" src="<?php echo esc_url( uottawa_asset( 'icons/logo.png' ) ); ?>" width="148" height="38" alt="uOttawa" />
       </a>
 
