@@ -156,18 +156,24 @@
     padding-bottom:40px;
     color:#fff;
   }
+  /* There is no French Figma frame, so the hero follows enligne.uottawa.ca:
+     56px semibold on a 57.68px line, with a 23.38px paragraph under it. The
+     English theme keeps its own Figma sizes. */
   .uottawa-lp .hero-content h1{
     max-width:1180px;               /* 1:62 */
-    font-size:3.25rem;              /* 52px  - 1:64 */
-    font-weight:700;
-    line-height:1.2692;             /* 66/52 - 1:64 */
+    font-size:3.5rem;               /* 56px */
+    font-weight:600;
+    line-height:1.03;               /* 57.68/56 */
   }
   .uottawa-lp .hero-content p{
     max-width:1180px;
     margin-top:12px;                /* gap 10 + pt 2 */
-    font-size:2rem;                 /* 32px  - 1:66 */
+    /* The live site scales this one rather than stepping it: 32px at 1920,
+       down to a 15px floor. Measured at 1920, 1700, 1400, 1100, 1024 and 768
+       and it tracks 1.667vw the whole way. */
+    font-size:clamp(15px, 1.6667vw, 32px);
     font-weight:400;
-    line-height:normal;             /* 1:66 */
+    line-height:1.25;               /* 40/32, and 18.75/15 at the floor */
   }
 
   /* ---------- STATS BAR — 1:60 / 1:67 ---------- */
