@@ -1305,11 +1305,15 @@ echo '<h3 class="uottawa-section-title">Areas of Study</h3>';
         echo '<div class="uottawa-field"><label>Areas of Study Text 219 (Preview: It may help support eligibility for futu...)</label>';
             echo '<textarea name="text_areas_of_study_219">'.esc_textarea($val_text_areas_of_study_219).'</textarea>';echo '</div>';
 
-        $val_text_areas_of_study_220 = get_post_meta($post->ID, 'text_areas_of_study_220', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé. Les titres et les descriptions des cours sont présentés en français à titre informatif seulement. Bien que certains de ces cours soient également offerts en français à l’Université d’Ottawa, le présent programme est entièrement offert en anglais. Les personnes inscrites suivront donc les versions anglaises de ces cours.';
+        $val_text_areas_of_study_220 = get_post_meta($post->ID, 'text_areas_of_study_220', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé.';
         echo '<div class="uottawa-field"><label>Areas of Study Text 220 (Preview: Please note that the pathway is a sug...)</label>';
             echo '<textarea name="text_areas_of_study_220">'.esc_textarea($val_text_areas_of_study_220).'</textarea>';echo '</div>';
 
-        $val_text_areas_of_study_221 = get_post_meta($post->ID, 'text_areas_of_study_221', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé. Les titres et les descriptions des cours sont présentés en français à titre informatif seulement. Bien que certains de ces cours soient également offerts en français à l’Université d’Ottawa, le présent programme est entièrement offert en anglais. Les personnes inscrites suivront donc les versions anglaises de ces cours.';
+        $val_text_areas_of_study_222 = get_post_meta($post->ID, 'text_areas_of_study_222', true) ?: 'Les titres et les descriptions des cours sont présentés en français à titre informatif seulement. Bien que certains de ces cours soient également offerts en français à l’Université d’Ottawa, le présent programme est entièrement offert en anglais. Les personnes inscrites suivront donc les versions anglaises de ces cours.';
+        echo '<div class="uottawa-field"><label>Cheminement 1: note sur la langue</label>';
+            echo '<textarea name="text_areas_of_study_222">'.esc_textarea($val_text_areas_of_study_222).'</textarea>';echo '</div>';
+
+        $val_text_areas_of_study_221 = get_post_meta($post->ID, 'text_areas_of_study_221', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé.';
         echo '<div class="uottawa-field"><label>Areas of Study Text 221 (Preview: Please note that the pathway is a sug...)</label>';
             echo '<textarea name="text_areas_of_study_221">'.esc_textarea($val_text_areas_of_study_221).'</textarea>';echo '</div>';
 
@@ -1661,6 +1665,7 @@ function uottawa_save_meta_boxes($post_id) {
     if (isset($_POST['text_areas_of_study_218'])) update_post_meta($post_id, 'text_areas_of_study_218', wp_kses_post($_POST['text_areas_of_study_218']));
     if (isset($_POST['text_areas_of_study_219'])) update_post_meta($post_id, 'text_areas_of_study_219', wp_kses_post($_POST['text_areas_of_study_219']));
     if (isset($_POST['text_areas_of_study_220'])) update_post_meta($post_id, 'text_areas_of_study_220', wp_kses_post($_POST['text_areas_of_study_220']));
+    if (isset($_POST['text_areas_of_study_222'])) update_post_meta($post_id, 'text_areas_of_study_222', wp_kses_post($_POST['text_areas_of_study_222']));
     if (isset($_POST['text_areas_of_study_221'])) update_post_meta($post_id, 'text_areas_of_study_221', wp_kses_post($_POST['text_areas_of_study_221']));
     if (isset($_POST['text_final_cta_1'])) update_post_meta($post_id, 'text_final_cta_1', sanitize_text_field($_POST['text_final_cta_1']));
     if (isset($_POST['text_final_cta_2'])) update_post_meta($post_id, 'text_final_cta_2', wp_kses_post($_POST['text_final_cta_2']));
@@ -1999,7 +2004,8 @@ function uottawa_landing_page_shortcode($atts) {
   <h2><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_15', true) ?: 'Cheminement 1 : parcours accéléré de 45 crédits'); ?></h2>
   <div class="rule"></div>
 
-  <p class="pathway-note"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_220', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé. Les titres et les descriptions des cours sont présentés en français à titre informatif seulement. Bien que certains de ces cours soient également offerts en français à l’Université d’Ottawa, le présent programme est entièrement offert en anglais. Les personnes inscrites suivront donc les versions anglaises de ces cours.'); ?></p>
+  <p class="pathway-note"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_220', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé.'); ?></p>
+  <p class="pathway-note"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_222', true) ?: 'Les titres et les descriptions des cours sont présentés en français à titre informatif seulement. Bien que certains de ces cours soient également offerts en français à l’Université d’Ottawa, le présent programme est entièrement offert en anglais. Les personnes inscrites suivront donc les versions anglaises de ces cours.'); ?></p>
 
   <h3 class="yearlbl"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_16', true) ?: 'Première année'); ?></h3>
 
@@ -2041,7 +2047,7 @@ function uottawa_landing_page_shortcode($atts) {
   <h2 style="margin-top:64px"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_51', true) ?: 'Cheminement 2 : parcours accéléré de 60 crédits'); ?></h2>
   <div class="rule"></div>
 
-  <p class="pathway-note"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_221', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé. Les titres et les descriptions des cours sont présentés en français à titre informatif seulement. Bien que certains de ces cours soient également offerts en français à l’Université d’Ottawa, le présent programme est entièrement offert en anglais. Les personnes inscrites suivront donc les versions anglaises de ces cours.'); ?></p>
+  <p class="pathway-note"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_221', true) ?: 'Veuillez noter que ce cheminement est proposé à titre indicatif. Les cours que vous choisirez et leur répartition d’un trimestre à l’autre détermineront votre cheminement personnalisé.'); ?></p>
 
   <h3 class="yearlbl"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_52', true) ?: 'Première année'); ?></h3>
 
