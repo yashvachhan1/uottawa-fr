@@ -100,7 +100,7 @@ echo '</ul>';
 echo '<div class="uottawa-tab-content active" id="tab-images">';
 echo '<h3 class="uottawa-section-title">Images</h3>';
 echo '<p>Every picture on this page, in the order it appears. Leave one empty to fall back to the design\'s own image.</p>';
-uottawa_landing_image_field( $post->ID, 'img_hero_1', 'Hero &mdash; background', '/wp-content/uploads/2026/08/ef4da6c9c98f32283a2013b4740afd8fb341e4de.webp' );
+uottawa_landing_image_field( $post->ID, 'img_hero_1', 'Hero &mdash; background', '/wp-content/uploads/2026/08/ef4da6c9c98f32283a2013b4740afd8fb341e4de.jpg' );
 uottawa_landing_image_field( $post->ID, 'img_overview_7', 'Overview &mdash; first photo', 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=940&q=80' );
 uottawa_landing_image_field( $post->ID, 'img_overview_8', 'Overview &mdash; second photo', 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=930&q=80' );
 uottawa_landing_image_field( $post->ID, 'img_areas_of_study_14', 'Areas of study &mdash; photo', '/wp-content/uploads/2026/08/09a3437c81e0706f56f386a8cdcda7ccbf69d2b5.webp' );
@@ -1745,7 +1745,7 @@ function uottawa_landing_page_shortcode($atts) {
     
 
 <?php $uottawa_hero = get_post_meta($post_id, 'img_hero_1', true); ?>
-<section class="hero"<?php if ($uottawa_hero) { echo ' style="background-image:linear-gradient(180deg,rgba(0,0,0,.78),rgba(0,0,0,.65)),url(' . esc_url($uottawa_hero) . ')"'; } ?>>
+<section class="hero"<?php if ($uottawa_hero) { echo ' style="background-image:url(' . esc_url($uottawa_hero) . ')"'; } ?>>
   <div class="container hero-content">
     <h1><?php echo wp_kses_post(get_post_meta($post_id, 'text_general_1', true) ?: 'Baccalauréat ès arts, études interdisciplinaires (Mode accéléré en ligne)'); ?></h1>
     <p><?php echo wp_kses_post(get_post_meta($post_id, 'text_general_2', true) ?: 'Enrichissez votre parcours scolaire et développez les compétences humaines les plus recherchées à l’ère de l’IA.'); ?></p>
