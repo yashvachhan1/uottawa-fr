@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Design tokens
+   Colours, type scale and spacing, all taken from the Figma file.
+   ========================================================================== */
+:root{
+  /* Colours (Figma style names) */
+  --ink:       #2D2D2C;   /* Tuatara   */
+  --red:       #8F001A;   /* Burgundy  */
+  --white:     #FFFFFF;
+  --black:     #000000;
+  --mercury:   #E2E2E2;
+  --alto:      #D9D9D9;
+  --concrete:  #F2F2F2;
+  --boulder:   #777777;
+  --americano: #80746C;
+  --silver:    #CCCCCC;
+  --gallery:   #EEEEEE;
+  --tundora:   #444444;
+
+  --font: "Open Sans", Arial, Helvetica, sans-serif;
+
+  /* Type. The max of each clamp is the exact Figma size at 1920px. */
+  /* Type is in rem at exactly the Figma pixel size (rem = px / 16), so it also
+     respects the reader's own browser font size. rem does not shrink with the
+     viewport, so the breakpoints further down restate these tokens smaller —
+     every size on the page flows from here. */
+  --fs-h1:           3rem;        /* 48px */
+  --fs-h2:           2.5rem;      /* 40px */
+  --fs-h3:           1.5rem;      /* 24px */
+  --fs-body:         1.5rem;      /* 24px */
+  --fs-body-sm:      1.25rem;     /* 20px */
+  --fs-stat:         4rem;        /* 64px */
+  --fs-hero-eyebrow: 2rem;        /* 32px */
+  --fs-hero-tag:     2.25rem;     /* 36px */
+  --fs-day-title:    2rem;        /* 32px */
+  --fs-nav:          0.90625rem;  /* 14.5px */
+  --fs-small:        0.8125rem;   /* 13px */
+
+  /* Spacing */
+  --space-section: clamp(48px, 5.2vw, 100px);
+  /* Page gutters, matched to the Online programs landing page so every page
+     lines up on the same left and right edge. The landing frame is inset
+     125px on the left and 91px on the right; both step down together at the
+     breakpoints below. */
+  /* Header height. The landing page's tab bar sticks directly beneath it. */
+  --header-h: 70px;
+  --page-l: 125px;
+  --page-r: 91px;
+  --wrap: 1922px;
+}

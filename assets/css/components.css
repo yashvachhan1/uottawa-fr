@@ -1,0 +1,309 @@
+/* ==========================================================================
+   Components
+   Pieces that appear on more than one page.
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  line-height:1.35;
+  border-radius:999px;
+  text-align:center;
+  transition:background-color .15s ease, color .15s ease;
+}
+.btn--red{ background:var(--red); color:var(--white); }
+.btn--red:hover{ background:#730015; }
+.btn--outline-light{ color:var(--white); border:1px solid var(--white); }
+.btn--outline-light:hover{ background:var(--white); color:var(--ink); }
+.btn--outline-dark{ background:var(--white); color:var(--ink); border:1px solid var(--black); }
+.btn--outline-dark:hover{ background:var(--ink); color:var(--white); border-color:var(--ink); }
+/* Language switch — carried over from the landing page build */
+.btn--lang{ background:var(--white); color:var(--red); border:1px solid var(--red); }
+.btn--lang:hover{ background:var(--red); color:var(--white); }
+
+/* One modifier per size the design actually uses, in rem at the Figma pixel
+   size: header 13 | hero 14 | "Read more" 15.91 | programme 20 | pill 23   */
+.btn--sm      { font-size:0.8125rem;                           padding:9px 18px; }
+.btn--hero    { font-size:0.875rem;    padding:clamp(9px, 0.5729vw, 11px) clamp(18px, 1.3542vw, 26px); }
+.btn--read    { font-size:0.994375rem; padding:clamp(6px, 0.3729vw, 7.159px) clamp(13px, 0.9115vw, 17.501px); }
+.btn--program { font-size:1.25rem;    padding:clamp(8px, 0.4688vw, 9px) clamp(16px, 1.1458vw, 22px); }
+.btn--pill    { font-size:1.4375rem;    padding:clamp(9px, 0.5391vw, 10.35px) clamp(18px, 1.3177vw, 25.3px); }
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--white);
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  min-height:var(--header-h);
+  padding-top:12px;
+  padding-bottom:12px;
+}
+
+.logo{ display:flex; align-items:center; flex:none; }
+/* One lockup, 1250x321, held at the 38px height the header is built around. */
+.logo__img{ width:148px; height:38px; }
+
+.nav{ margin-left:auto; }
+.nav ul{ display:flex; gap:clamp(20px, 3.2vw, 65px); }
+.nav a{
+  font-size:var(--fs-nav);
+  line-height:1.7;
+  font-weight:400;
+  color:var(--ink);
+  white-space:nowrap;
+  border-bottom:2px solid transparent;
+}
+.nav a:hover{ border-bottom-color:var(--red); }
+
+/* Sits immediately to the right of the menu, before the two CTA buttons. */
+/* The nav used to push everything right; with it gone the FR switch does. */
+.header-lang{ flex:none; margin-left:auto; }
+.header-lang .btn{ font-size:0.8125rem; line-height:1.125rem; padding:9px 14px; border-radius:20px; }
+
+.header-actions{ display:flex; gap:10px; flex:none; }
+
+.nav-toggle{
+  display:none;
+  width:44px; height:44px;
+  margin-left:auto;
+  align-items:center; justify-content:center;
+}
+.nav-toggle span{
+  display:block; position:relative;
+  width:22px; height:2px; background:var(--ink);
+}
+.nav-toggle span::before,
+.nav-toggle span::after{
+  content:""; position:absolute; left:0;
+  width:22px; height:2px; background:var(--ink);
+}
+.nav-toggle span::before{ top:-7px; }
+.nav-toggle span::after { top:7px;  }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+/* The photo is its own band, exactly the Figma size: 1920 x 772.
+   The dark card sits on top of it and hangs over the bottom edge onto
+   the white page — that overhang is why the container is pulled up.
+     image height  = 772 / 1920 = 40.2083vw
+     card top      = 415 / 1920 = 21.6146vw   (from the top of the photo)
+     pull-up       = 40.2083 - 21.6146 = 18.5937vw                        */
+.hero{ position:relative; }
+
+.hero__bg{
+  width:100%;
+  aspect-ratio:1920 / 772;
+  overflow:hidden;
+}
+.hero__bg img{ width:100%; height:100%; object-fit:cover; object-position:center 35%; }
+
+.hero .container{
+  position:relative;
+  margin-top:-18.5937vw;
+  padding-top:0;
+  /* The gap to the next block is that section's own padding-top (Figma leaves
+     94-125px below the card depending on the page), so none is added here. */
+  padding-bottom:0;
+}
+
+/* The card and its paragraph are sized in vw, not fixed px, so they keep the
+   same proportions as the design on every screen — the type scales with vw
+   too, so the text breaks into the same lines at any width.
+     card  1134 / 1920 = 59.0625vw
+     text  1010 / 1920 = 52.6042vw
+     indent  45 / 1920 =  2.34vw   (Figma card x=150, content starts at 105) */
+.hero__card{
+  margin-left:clamp(0px, 2.34vw, 45px);
+  width:min(59.0625vw, 1134px);
+  max-width:100%;
+  background:var(--ink);
+  padding:clamp(24px, 2.66vw, 51px);
+}
+.hero__eyebrow{
+  font-size:var(--fs-hero-eyebrow);
+  line-height:1.375;
+  font-weight:400;
+  color:var(--silver);
+}
+.hero__title{
+  margin-top:clamp(4px, 0.5vw, 10px);
+  font-size:var(--fs-h1);
+  line-height:1.2;
+  color:var(--white);
+}
+.hero__tagline{
+  margin-top:clamp(8px, 0.8vw, 15px);
+  font-size:var(--fs-hero-tag);
+  line-height:1.2;
+  font-weight:600;
+  color:var(--gallery);
+}
+.hero__text{
+  margin-top:clamp(14px, 1.4vw, 27px);
+  width:min(52.6042vw, 1010px);
+  max-width:100%;
+  font-size:var(--fs-body);
+  line-height:1.5;
+  color:var(--gallery);
+}
+.hero__actions{
+  margin-top:clamp(20px, 2.1vw, 40px);
+  display:flex; flex-wrap:wrap; gap:16px;
+}
+
+/* Inner pages use a shorter card (1134 x 338 at y621), so it sits lower
+   on the photo:  card top = 551 / 1920 = 28.6979vw
+                  pull-up  = 40.2083 - 28.6979 = 11.5104vw                */
+.hero--page .container{ margin-top:-11.5104vw; }
+.hero--page .hero__text p + p{ margin-top:12px; }
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq-list{
+  margin-top:clamp(24px, 1.7vw, 32px);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.faq-item__q{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:var(--ink);
+  border-radius:2px;
+  padding:16px 20px;
+  text-align:left;
+}
+.faq-item__q:hover{ background:#3b3b3a; }
+.faq-item__marker{
+  flex:none;
+  width:12px;
+  font-size:0.8125rem;
+  line-height:1;
+  color:var(--red);
+}
+.faq-item__q span:last-child{
+  font-size:var(--fs-h3);
+  line-height:1.375;
+  font-weight:700;
+  color:var(--white);
+}
+.faq-item__a{
+  padding:16px 20px 0 44px;
+  font-size:var(--fs-body);
+  line-height:1.25;
+  font-weight:400;
+}
+.faq-item:not(.is-open) .faq-item__a{ display:none; }
+
+/* ==========================================================================
+   FEATURED ARTICLES
+   ========================================================================== */
+.articles-grid{
+  margin-top:clamp(26px, 1.7vw, 32px);
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+}
+.article-card{ border:1px solid var(--concrete); display:flex; flex-direction:column; }
+.article-card__media{
+  aspect-ratio:825 / 255;
+  background:var(--alto);
+  border-bottom:1px solid var(--concrete);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.article-card__media img{ width:100%; height:100%; object-fit:cover; }
+.article-card__placeholder{ font-size:0.75rem; line-height:1.4; font-weight:400; color:var(--boulder); }
+.article-card__body{ padding:20px; display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.article-card__kicker { font-size:var(--fs-body-sm); line-height:1.2; font-weight:400; color:var(--americano); }
+.article-card__title  { font-size:var(--fs-h3);      line-height:1.375; color:var(--red); }
+.article-card__excerpt{ font-size:var(--fs-body-sm); line-height:1.5; font-weight:400; }
+.article-card__meta   { font-size:var(--fs-small);   line-height:1.55; font-weight:400; color:var(--americano); margin-bottom:6px; }
+
+/* ==========================================================================
+   CTA BAND
+   ========================================================================== */
+/* This is the band from the Online programs page, so the two are identical:
+   77px above the text, a 383px floor, the heading capped at 842px so it holds
+   two lines instead of three, and buttons that size to their own label rather
+   than to a fixed width. The ladder lives with the other breakpoints and steps
+   on the same widths landing.css uses. */
+.cta{
+  margin-top:var(--space-section);
+  background:var(--ink);
+  border-top:1px solid var(--tundora);
+  border-bottom:1px solid var(--tundora);
+  padding:77px 0 56px;
+  min-height:383px;
+}
+.cta .container{
+  max-width:var(--wrap);
+  padding-left:var(--page-l);
+  padding-right:var(--page-r);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:48px;
+  align-items:start;
+}
+.cta__title{
+  max-width:842px;
+  margin-bottom:14px;
+  font-size:4.75rem;        /* 76px */
+  line-height:4.5rem;       /* 72px */
+  color:var(--white);
+}
+.cta__text-body{
+  max-width:728px;
+  margin:0;
+  font-size:1.5rem;         /* 24px */
+  line-height:1.8125rem;
+  font-weight:400;
+  color:var(--gallery);
+}
+.cta__actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:52px;
+}
+.cta__action .btn{
+  margin-bottom:22px;
+  padding:12.924px 28.197px 11.749px;
+  font-size:1.468562rem;    /* 23.497px */
+  line-height:1.36;
+  border-radius:999px;
+}
+.cta__action p{
+  max-width:312px;
+  margin:0;
+  font-size:1.468562rem;
+  line-height:1.688875rem;
+  font-weight:400;
+  color:var(--white);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer{
+  background:var(--black);
+  padding:16px;
+  text-align:center;
+}
+/* Figma: 12px text in a 16px box, 16px padding all round -> 48px tall */
+.site-footer p{ font-size:0.75rem; line-height:1rem; color:var(--silver); }
