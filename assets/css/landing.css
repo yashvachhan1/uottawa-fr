@@ -640,16 +640,19 @@
   }
   .uottawa-lp .success-grid{display:grid;grid-template-columns:repeat(3,1fr);}
   .uottawa-lp .success .num{
-    font-size:4.430875rem;             /* 1:663 */
+    /* The French wording is longer than the English - "Plus de 300 000" for
+       "300,000+" - so the band is set at the size enligne.uottawa.ca uses
+       rather than the English design's. */
+    font-size:2.5rem;                  /* 40px */
     font-weight:700;
     line-height:normal;
     color:var(--ink);
     margin-bottom:26px;
   }
   .uottawa-lp .success .lbl{
-    font-size:1.824437rem;             /* 1:664 */
+    font-size:1.3125rem;               /* 21px */
     font-weight:400;
-    line-height:2.019938rem;
+    line-height:1.625rem;              /* 26px */
     color:var(--ink);
   }
 
@@ -769,8 +772,6 @@
     .uottawa-lp .final-cta .lede,
     .uottawa-lp .final-cta .cta-note,
     .uottawa-lp .final-cta .cta-btn{font-size:1.125rem;}
-    .uottawa-lp .success .num{font-size:3.5rem;}
-    .uottawa-lp .success .lbl{font-size:1.25rem;line-height:1.625rem;}
     .uottawa-lp .areas-grid{row-gap:30px;}
     .uottawa-lp .card{width:500px;}
     .uottawa-lp .why .container{grid-template-columns:minmax(0,1fr) 500px;column-gap:60px;}
@@ -890,8 +891,8 @@
     .uottawa-lp .success{padding:32px 0 40px;}
     .uottawa-lp .success h3{font-size:1.5rem;}
     .uottawa-lp .success .rule{margin:14px 0 36px;}
-    .uottawa-lp .success .num{font-size:3rem;margin-bottom:12px;}
-    .uottawa-lp .success .lbl{font-size:1.125rem;line-height:1.5rem;}
+    .uottawa-lp .success .num{font-size:2rem;margin-bottom:12px;}
+    .uottawa-lp .success .lbl{font-size:1.0625rem;line-height:1.4375rem;}
     .uottawa-lp .final-cta .cta-btn,
     .uottawa-lp .final-cta .cta-note{font-size:1.0625rem;line-height:1.5rem;}
     .uottawa-lp .banner{padding:20px;}
@@ -915,7 +916,7 @@
     .uottawa-lp .card h3{font-size:1.375rem;line-height:1.625rem;}
     .uottawa-lp .card .sub{font-size:0.9375rem;line-height:1.375rem;}
     .uottawa-lp .success-grid{grid-template-columns:1fr;row-gap:30px;}
-    .uottawa-lp .success .num{font-size:2.5rem;}
+    .uottawa-lp .success .num{font-size:1.875rem;}
     .uottawa-lp .levels,.uottawa-lp .areas-grid{grid-template-columns:1fr;}
     /* A single row would scroll sideways on a phone and cut tabs off, so it
        wraps into two columns. An odd last tab sits in the left one. */
@@ -944,7 +945,7 @@
     .uottawa-lp .header-actions{width:100%;}
     .uottawa-lp .btn{flex:1;}
     .uottawa-lp .hero{min-height:340px;}
-    .uottawa-lp .success .num{font-size:2.125rem;}
+    .uottawa-lp .success .num{font-size:1.75rem;}
     .uottawa-lp .final-cta h2{font-size:1.5rem;line-height:1.75rem;}
   }
 

@@ -2255,7 +2255,7 @@ function uottawa_landing_page_shortcode($atts) {
   <div class="success-grid">
     <div>
       <div class="num"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_143', true) ?: '12 000'); ?></div>
-      <div class="lbl"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_144', true) ?: 'membres du corps professoral, du personnel'); ?><br><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_145', true) ?: 'de recherche et du personnel administratif'); ?></div>
+      <div class="lbl"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_144', true) ?: 'membres du corps professoral, du personnel'); ?> <?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_145', true) ?: 'de recherche et du personnel administratif'); ?></div>
     </div>
     <div>
       <div class="num"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_146', true) ?: 'Plus de 300 000'); ?></div>
@@ -2263,7 +2263,7 @@ function uottawa_landing_page_shortcode($atts) {
     </div>
     <div>
       <div class="num"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_148', true) ?: '90 %'); ?></div>
-      <div class="lbl"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_149', true) ?: 'des diplômé·e·s occupent un emploi six mois'); ?><br><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_150', true) ?: 'après l’obtention de leur diplôme'); ?></div>
+      <div class="lbl"><?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_149', true) ?: 'des diplômé·e·s occupent un emploi six mois'); ?> <?php echo wp_kses_post(get_post_meta($post_id, 'text_areas_of_study_150', true) ?: 'après l’obtention de leur diplôme'); ?></div>
     </div>
   </div>
  </div>
