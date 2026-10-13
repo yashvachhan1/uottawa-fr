@@ -11,9 +11,9 @@ get_header();
 
   <div class="container">
     <div class="page-hero__card">
-      <h1 class="page-hero__title">News &amp; events</h1>
+      <h1 class="page-hero__title">Actualités et événements</h1>
       <div class="page-hero__text">
-        <p>Explore featured articles and the latest posts from uOttawa Online. Find resources to help you strengthen human-centred and employer-valued skills, future-proof your career, and complete your degree in less time.</p>
+        <p>Consultez une sélection d’articles et les plus récentes publications de l’Université d’Ottawa en ligne. Ces ressources vous aident à développer des compétences humaines recherchées sur le marché du travail, à préparer votre avenir professionnel et à progresser plus rapidement vers l’obtention de votre diplôme.</p>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ get_header();
 <!-- ============================================================ FEATURED ARTICLES -->
 <section class="section featured">
   <div class="container">
-    <h2 class="section-title">Featured articles</h2>
+    <h2 class="section-title">Articles en vedette</h2>
 
     <div class="articles-grid articles-grid--3">
       <?php
@@ -47,12 +47,12 @@ get_header();
 <!-- ============================================================ LATEST ARTICLES -->
 <section class="section latest">
   <div class="container">
-    <h2 class="section-title">Latest articles</h2>
+    <h2 class="section-title">Articles récents</h2>
 
     <p class="filter-bar">
-      <span class="filter-bar__label">Filter by:</span>
-      <a class="is-active" href="#">All programs</a>
-      <a href="#">Topic</a>
+      <span class="filter-bar__label">Filtrer par :</span>
+      <a class="is-active" href="#">Tous les programmes</a>
+      <a href="#">Sujet</a>
     </p>
 
     <div class="articles-grid articles-grid--3">

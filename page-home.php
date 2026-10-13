@@ -11,13 +11,13 @@ get_header();
 
   <div class="container">
     <div class="page-hero__card">
-      <p class="page-hero__eyebrow">uOttawa Online</p>
-      <h1 class="page-hero__title">Open minds. Brighter futures. Since 1848.</h1>
-      <p class="page-hero__tagline">Your journey continues, wherever you are.</p>
-      <p class="page-hero__text">uOttawa Online extends a 175-year academic tradition to learners who are building a career, a family, and a future; often all at once. The same faculty. The same standard. A new way to take part.</p>
+      <p class="page-hero__eyebrow">Université d'Ottawa en ligne</p>
+      <h1 class="page-hero__title">Des esprits ouverts. Un avenir prometteur. Depuis 1848.</h1>
+      <p class="page-hero__tagline">Poursuivez votre parcours, où que vous soyez.</p>
+      <p class="page-hero__text">L’Université d’Ottawa s’appuie sur plus de 175 ans de tradition universitaire pour offrir une expérience d’apprentissage adaptée aux personnes qui concilient carrière, vie familiale et projets d’avenir. La même expertise du corps professoral. Les mêmes normes d’excellence. Une nouvelle façon d’étudier.</p>
       <div class="page-hero__actions">
-        <a class="btn btn--red btn--hero" href="#">Apply now</a>
-        <a class="btn btn--outline-light btn--hero" href="#">Request info</a>
+        <a class="btn btn--red btn--hero" href="#">Demande d’admission</a>
+        <a class="btn btn--outline-light btn--hero" href="#">Demander des renseignements</a>
       </div>
     </div>
   </div>
@@ -26,20 +26,20 @@ get_header();
 <!-- ============================================================ STATS -->
 <section class="section stats">
   <div class="container">
-    <h2 class="section-title">uOttawa: Supporting your success</h2>
+    <h2 class="section-title">L’Université d’Ottawa : un environnement propice à votre réussite</h2>
 
     <div class="stats-row">
       <div class="stat">
-        <p class="stat__value">12,000</p>
-        <p class="stat__label">professors, researchers and support staff</p>
+        <p class="stat__value">12 000</p>
+        <p class="stat__label">membres du corps professoral, du personnel de recherche et du personnel administratif</p>
       </div>
       <div class="stat">
-        <p class="stat__value">300,000</p>
-        <p class="stat__label">alumni worldwide</p>
+        <p class="stat__value">300 000</p>
+        <p class="stat__label">diplômé·e·s à travers le monde</p>
       </div>
       <div class="stat">
-        <p class="stat__value">90%</p>
-        <p class="stat__label">employment rate six months after graduation</p>
+        <p class="stat__value">90 %</p>
+        <p class="stat__label">des diplômé·e·s occupent un emploi six mois après l’obtention de leur diplôme</p>
       </div>
     </div>
   </div>
@@ -48,32 +48,32 @@ get_header();
 <!-- ============================================================ AUDIENCE -->
 <section class="section audience">
   <div class="container">
-    <h2 class="section-title">A degree that&rsquo;s built for you</h2>
-    <p class="lede">Wherever you&rsquo;re starting from, there&rsquo;s a place for you here.</p>
+    <h2 class="section-title">Un diplôme qui s’adapte à votre réalité</h2>
+    <p class="lede">Quel que soit le chemin parcouru, une place vous attend à l’Université d’Ottawa.</p>
 
     <div class="audience-grid">
       <article class="audience-item">
         <img class="audience-item__icon" src="<?php echo esc_url( uottawa_asset( 'icons/icon-jobchange.svg' ) ); ?>" width="75" height="75" alt="">
-        <h4>The career changer</h4>
-        <p>You have a vision for your future. A uOttawa credential gives you the standing to arrive there with confidence.</p>
+        <h4>Un nouveau tournant pour votre carrière</h4>
+        <p>Vous avez des ambitions pour votre avenir. Un diplôme de l’Université d’Ottawa vous aide à les poursuivre avec la reconnaissance et la confiance nécessaires pour aller plus loin.</p>
       </article>
 
       <article class="audience-item audience-item--flip">
         <img class="audience-item__icon" src="<?php echo esc_url( uottawa_asset( 'icons/icon-family.svg' ) ); ?>" width="75" height="75" alt="">
-        <h4>The working parent</h4>
-        <p>Your week is already full, with work, with family, with everything else that matters to you. uOttawa Online was designed to fit inside that life, not compete with it.</p>
+        <h4>Travail, famille et études : un équilibre possible</h4>
+        <p>Votre quotidien est déjà bien rempli. L’Université d’Ottawa en ligne vous offre la flexibilité nécessaire pour poursuivre vos études tout en préservant l’équilibre qui vous convient.</p>
       </article>
 
       <article class="audience-item">
         <img class="audience-item__icon" src="<?php echo esc_url( uottawa_asset( 'icons/icon-career.svg' ) ); ?>" width="53" height="53" alt="">
-        <h4>The professional closing a gap</h4>
-        <p>Experience has brought you this far. A missing credential is what stands between you and the next title, the next offer, the next promotion. uOttawa Online helps you close that gap, without asking you to uproot your life.</p>
+        <h4>L’expérience acquise, le diplôme pour aller plus loin</h4>
+        <p>Votre expérience vous a permis de bâtir un solide parcours professionnel. Si l’obtention d’un diplôme peut vous ouvrir la voie vers un nouveau poste, une nouvelle occasion ou une promotion, l’Université d’Ottawa en ligne vous permet de poursuivre votre progression sans bouleverser votre quotidien.</p>
       </article>
 
       <article class="audience-item">
         <img class="audience-item__icon" src="<?php echo esc_url( uottawa_asset( 'icons/icon-learning.svg' ) ); ?>" width="56" height="56" alt="">
-        <h4>The lifelong learner</h4>
-        <p>Maybe you&rsquo;re looking to complete a credential you didn&rsquo;t have time for before. Maybe you simply never want to stop learning uOttawa Online helps you keep exploring, building on your life and professional knowledge.</p>
+        <h4>Apprendre, encore et toujours</h4>
+        <p>Aimeriez-vous terminer une formation laissée en suspens ou simplement continuer à enrichir vos connaissances? L’Université d’Ottawa en ligne vous permet de poursuivre votre apprentissage en vous appuyant sur l’expérience et les connaissances acquises tout au long de votre parcours.</p>
       </article>
     </div>
   </div>
@@ -82,29 +82,29 @@ get_header();
 <!-- ============================================================ REASONS -->
 <section class="section reasons">
   <div class="container">
-    <h2 class="section-title">Why learners choose uOttawa Online</h2>
-    <p class="lede">Studying here connects your professional goals to the education of one of Canada&rsquo;s leading research universities.</p>
+    <h2 class="section-title">Pourquoi choisir l’Université d’Ottawa en ligne?</h2>
+    <p class="lede">Étudier à l’Université d’Ottawa en ligne, c’est bénéficier de la qualité de l’enseignement de l’une des grandes universités de recherche du Canada pour atteindre vos objectifs professionnels.</p>
 
     <div class="reasons-grid">
       <article class="reason-card reason-card--red">
-        <h4>A respected degree, 100% online</h4>
-        <p>Earn a globally recognized uOttawa credential backed by a U15 research university, without relocating or stepping away from your current career, gaining experience employers value.</p>
+        <h4>Un diplôme reconnu, 100 % en ligne</h4>
+        <p>Un diplôme de l’Université d’Ottawa reconnu à l’échelle internationale vous permet de profiter de la qualité de l’enseignement d’une université de recherche membre du U15. Vous pouvez poursuivre vos études sans déménager ni mettre votre carrière sur pause, tout en développant une expérience recherchée sur le marché du travail.</p>
       </article>
       <article class="reason-card">
-        <h4>Faculty-led, not generic</h4>
-        <p>Every uOttawa Online program is shaped by a Faculty with a distinct perspective, emphasizing the critical human skills and personal adaptability needed alongside artificial intelligence.</p>
+        <h4>L’expertise de chaque faculté</h4>
+        <p>Chaque programme de l’Université d’Ottawa en ligne bénéficie de l’expertise et de la perspective propres à sa faculté, tout en mettant l’accent sur les compétences humaines essentielles et la capacité d’adaptation dans un contexte où l’intelligence artificielle occupe une place grandissante.</p>
       </article>
       <article class="reason-card">
-        <h4>A team in your corner</h4>
-        <p>A dedicated, Canada-based student success advisor supports your academic journey from your very first question through graduation. It is a relationship, not a help desk.</p>
+        <h4>Un accompagnement à chaque étape</h4>
+        <p>Une équipe de conseiller·ère·s à l’admission et à la réussite étudiante, basée au Canada, vous accompagne tout au long de votre parcours universitaire, de vos premières questions jusqu’à l’obtention de votre diplôme. Vous profitez ainsi d’un accompagnement personnalisé qui va bien au-delà d’un simple service d’assistance.</p>
       </article>
       <article class="reason-card">
-        <h4>A community of peers</h4>
-        <p>Learn alongside ambitious working professionals and returning learners from across Canada, expanding your professional network into a global community of over 200,000 uOttawa alumni.</p>
+        <h4>Un réseau qui va plus loin</h4>
+        <p>La communauté étudiante réunit des personnes de partout au Canada aux parcours professionnels et universitaires variés. La diversité des parcours favorise les échanges et enrichit votre expérience d’apprentissage. Votre réseau professionnel s’ouvre également sur la communauté internationale de l’Université d’Ottawa, qui compte plus de 200 000 membres.</p>
       </article>
       <article class="reason-card">
-        <h4>Prior learning, recognized</h4>
-        <p>Build on what you&rsquo;ve already earned. Turn your existing college diploma credits into a respected uOttawa degree through direct transfer pathways built for working life.</p>
+        <h4>Un parcours qui reconnaît vos acquis</h4>
+        <p>Vos acquis scolaires constituent une base solide pour poursuivre vos études sans repartir à zéro. Grâce à des possibilités de transfert de crédits adaptées à la vie professionnelle, les crédits obtenus dans le cadre de votre diplôme d’études collégiales peuvent être reconnus dans votre cheminement vers un diplôme de l’Université d’Ottawa.</p>
       </article>
     </div>
   </div>
@@ -113,8 +113,8 @@ get_header();
 <!-- ============================================================ BEYOND -->
 <section class="section beyond">
   <div class="container">
-    <h2 class="section-title">uOttawa Online: Beyond the credential.</h2>
-    <p class="lede">A degree is the destination, but learning starts paying off before you get there. Adults who continue their education see gains that reach beyond the learning experience itself: In their day-to-day confidence, their sense of purpose, and their career prospects.</p>
+    <h2 class="section-title">L’Université d’Ottawa en ligne : bien plus qu’un diplôme</h2>
+    <p class="lede">Le diplôme est l’aboutissement d’un parcours dont la valeur se construit à chaque étape. Pour les adultes qui poursuivent leurs études, l’apprentissage ouvre de nouvelles possibilités : il renforce la confiance, donne un nouvel élan aux aspirations personnelles et élargit les perspectives professionnelles.</p>
 
     <div class="beyond-grid">
       <article class="beyond-item">
@@ -122,8 +122,8 @@ get_header();
           <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_1', uottawa_asset( 'img/1db0caf7dba8f8cfcd2ab1b78c55589d2203dad2.jpg' ) ) ); ?>" alt="">
         </div>
         <div class="beyond-item__body">
-          <h4>Life satisfaction</h4>
-          <p>Most adult learners report a real improvement in wellbeing and confidence from continuing their education, even when the material and balance are genuinely challenging.<span class="sup">1</span></p>
+          <h4>Un plus grand bien-être</h4>
+          <p>La plupart des adultes qui poursuivent leurs études constatent une réelle amélioration de leur bien-être et de leur confiance, même lorsque les exigences de la formation et la conciliation avec les autres sphères de leur vie représentent de véritables défis.<span class="sup">1</span></p>
         </div>
       </article>
 
@@ -132,8 +132,8 @@ get_header();
           <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_2', uottawa_asset( 'img/9755731fb6ea8b22a9d25e00c68d1d505c1bfdbb.jpg' ) ) ); ?>" alt="">
         </div>
         <div class="beyond-item__body">
-          <h4>Deepen purpose</h4>
-          <p>Adults who continue learning report a stronger sense of purpose than those who don't, according to UK research on adult education outcomes.<span class="sup">2</span></p>
+          <h4>Un sentiment d’accomplissement renouvelé</h4>
+          <p>Selon une étude britannique sur les effets de la formation à l’âge adulte, les personnes qui continuent d’apprendre font état d’un plus grand sentiment d’accomplissement que celles qui ne poursuivent pas de formation.<span class="sup">2</span></p>
         </div>
       </article>
 
@@ -142,25 +142,25 @@ get_header();
           <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_3', uottawa_asset( 'img/07662f640130e427d17ab41521cec900d86b8ee3.jpg' ) ) ); ?>" alt="">
         </div>
         <div class="beyond-item__body">
-          <h4>Sharpen prospects</h4>
-          <p>Canadian workers with a university degree earn about 53% more per hour, on average, than those without post-secondary education.<span class="sup">3</span></p>
+          <h4>Un avenir professionnel plus prometteur</h4>
+          <p>Au Canada, les personnes titulaires d’un diplôme universitaire gagnent en moyenne 53 % de plus par heure que celles qui n’ont pas fait d’études postsecondaires.<span class="sup">3</span></p>
         </div>
       </article>
     </div>
 
-    <p class="sources">Sources: &sup1; Adult-learner wellbeing research associated with the National Institute of Adult Continuing Education (NIACE). &sup2; Learning and Work Institute (UK, 2018) research on adult learning outcomes. &sup3; Bank of Canada, &ldquo;The payoffs of higher education&rdquo; (2020), based on 2018 wage data.</p>
+    <p class="sources">Sources : &sup1; Recherche sur le bien-être des adultes en formation associée au National Institute of Adult Continuing Education (NIACE). &sup2; Étude du Learning and Work Institute (Royaume-Uni, 2018) sur les effets de la formation à l’âge adulte. &sup3; Banque du Canada, &laquo;&nbsp;The Payoffs of Higher Education&nbsp;&raquo; (2020), d’après les données salariales de 2018.</p>
   </div>
 </section>
 
 <!-- ============================================================ PROGRAMS -->
 <section class="section programs" id="programs">
   <div class="container">
-    <h2 class="section-title">Our programs</h2>
+    <h2 class="section-title">Nos programmes</h2>
 
     <article class="program-card">
-      <h4>Bachelor of Arts, Interdisciplinary Studies (Online, Accelerated)</h4>
-      <p>For college diploma graduates with 3+ years of work experience who want to build on that foundation with a uOttawa degree. Bring your diploma; we&rsquo;ll recognize it through transfer credit and build the rest of your degree around your working life.</p>
-      <a class="btn btn--red btn--program" href="#">Explore the program</a>
+      <h4>Baccalauréat ès arts en études interdisciplinaires (mode accéléré en ligne)</h4>
+      <p>Ce programme s’adresse aux titulaires d’un diplôme d’études collégiales qui comptent au moins trois années d’expérience professionnelle et souhaitent s’appuyer sur leurs acquis pour obtenir un diplôme de l’Université d’Ottawa. Votre formation collégiale est reconnue grâce au transfert de crédits, et votre cheminement universitaire est conçu pour s’adapter à votre vie professionnelle.</p>
+      <a class="btn btn--red btn--program" href="#">Découvrir le programme</a>
     </article>
   </div>
 </section>
@@ -168,21 +168,21 @@ get_header();
 <!-- ============================================================ FLEXIBLE DAY -->
 <section class="section day" id="day">
   <div class="container">
-    <h2 class="section-title">A flexible day, your way</h2>
-    <p class="lede">Wondering how this fits into a week that&rsquo;s already full? Here&rsquo;s how our students can make it work.</p>
+    <h2 class="section-title">Une journée qui s’adapte à votre réalité</h2>
+    <p class="lede">Vous demandez-vous comment intégrer les études à un horaire déjà bien rempli? Découvrez comment cette formule peut s’adapter à votre quotidien.</p>
 
     <div class="day-row">
       <article class="day-card">
-        <h4>The working professional</h4>
+        <h4>Les études au rythme de la vie professionnelle</h4>
         <dl class="day-list">
-          <dt>7:15 a.m.</dt>
-          <dd>15 minutes with a recorded lecture before the day starts.</dd>
-          <dt>12:15 p.m.</dt>
-          <dd>A quiz or short exercise, closed out before lunch ends.</dd>
-          <dt>3:00 p.m.</dt>
-          <dd>Grab a coffee, attend instructor&rsquo;s virtual office hours to check in about a difficult concept.</dd>
-          <dt>One evening a week.</dt>
-          <dd>Enough uninterrupted time set aside to read and complete assignments.</dd>
+          <dt>7 h 15 :</dt>
+          <dd>Consacrez 15 minutes au visionnement d’une séance de cours enregistrée avant de commencer votre journée de travail.</dd>
+          <dt>12 h 15 :</dt>
+          <dd>Profitez de votre pause du midi pour terminer un questionnaire ou un court exercice.</dd>
+          <dt>15 h :</dt>
+          <dd>Prenez un café et participez aux heures de disponibilité virtuelles du corps professoral pour approfondir une notion plus complexe.</dd>
+          <dt>Un soir par semaine :</dt>
+          <dd>Réservez une période sans interruption pour vos lectures et vos travaux.</dd>
         </dl>
       </article>
       <div class="day-media">
@@ -192,14 +192,14 @@ get_header();
 
     <div class="day-row day-row--reverse">
       <article class="day-card">
-        <h4>The parent managing life and work</h4>
+        <h4>Un équilibre entre famille, travail et études</h4>
         <dl class="day-list">
-          <dt>School drop-off.</dt>
-          <dd>Course notes pulled up on a phone, five minutes at a time.</dd>
-          <dt>Nap time.</dt>
-          <dd>The one predictable window in the day, used for the heaviest task on the list. It could be a group meeting or a pre-arranged time with your instructor.</dd>
-          <dt>After children's bedtime</dt>
-          <dd>Quiet concentration time, done at the kitchen table.</dd>
+          <dt>Le départ pour l’école :</dt>
+          <dd>Consultez vos notes de cours sur votre appareil mobile dès que vous avez cinq minutes.</dd>
+          <dt>L’heure de la sieste :</dt>
+          <dd>Profitez de ce moment de la journée pour vous consacrer à une tâche qui demande davantage de temps et d’attention, comme une rencontre de groupe ou un rendez-vous planifié avec un membre du corps professoral.</dd>
+          <dt>Après le coucher des enfants :</dt>
+          <dd>Profitez de ce moment de calme pour avancer vos lectures et vos travaux.</dd>
         </dl>
       </article>
       <div class="day-media">
@@ -212,17 +212,17 @@ get_header();
            the photo beside it is taller and runs on past it. -->
       <div class="day-col">
         <article class="day-card">
-          <h4>The lifelong learner</h4>
+          <h4>Apprendre, encore et toujours</h4>
           <dl class="day-list">
-            <dt>Friday afternoon.</dt>
-            <dd>Check in with student success advisor about how it's going.</dd>
-            <dt>Saturday morning.</dt>
-            <dd>Coffee and the week's material, at an unhurried pace.</dd>
-            <dt>Sunday afternoon.</dt>
-            <dd>A longer block, set aside to complete an assignment.</dd>
+            <dt>Vendredi après-midi :</dt>
+            <dd>Discutez de vos progrès avec votre conseiller·ère à la réussite étudiante.</dd>
+            <dt>Samedi matin :</dt>
+            <dd>Prenez le temps de parcourir le contenu de la semaine autour d’un café, à votre rythme.</dd>
+            <dt>Dimanche après-midi :</dt>
+            <dd>Réservez une plus longue période pour terminer un travail.</dd>
           </dl>
         </article>
-        <a class="btn btn--red btn--pill day__cta" href="#">Learn more</a>
+        <a class="btn btn--red btn--pill day__cta" href="#">En savoir plus</a>
       </div>
       <div class="day-media">
         <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_3', uottawa_asset( 'img/37a62cab214313cb1ec754ace570845aadd6deb8.jpg' ) ) ); ?>" alt="">
@@ -234,110 +234,110 @@ get_header();
 <!-- ============================================================ NEXT STEP -->
 <section class="section next">
   <div class="container">
-    <h2 class="section-title">Your next step, with someone in your corner.</h2>
-    <p class="lede">Applying to a uOttawa Online program isn&rsquo;t something you have to figure out alone. An enrolment advisor will walk you through it: what you&rsquo;ll need, what your prior learning could count toward, and whether the timing works for the life you&rsquo;re already living.</p>
+    <h2 class="section-title">Votre prochaine étape, avec un accompagnement personnalisé</h2>
+    <p class="lede">Notre équipe vous accompagne à chaque étape de votre demande d’admission à un programme de l’Université d’Ottawa en ligne. Une personne-ressource à l’admission vous guide tout au long du processus, des documents requis à la reconnaissance possible de vos acquis, en tenant compte de votre parcours et de votre réalité.</p>
 
     <ol class="steps">
       <li>
-        <h3>1. Connect with an enrolment advisor</h3>
-        <p>Start with a conversation. Your advisor will ask about your background, your goals, and your timeline, and help you figure out whether, and how, a uOttawa Online program fits.</p>
+        <h3>1. Discutez avec une personne-ressource à l’admission</h3>
+        <p>Tout commence par une conversation. Votre personne-ressource prend le temps de connaître votre parcours, vos objectifs et l’échéancier que vous envisagez afin de déterminer si un programme de l’Université d’Ottawa en ligne répond à vos besoins et comment il peut s’intégrer à votre réalité.</p>
       </li>
       <li>
-        <h3>2. Review your experience</h3>
-        <p>Your advisor will ask about your prior post-secondary credit or professional experience to see what may be recognized toward your program, so you&rsquo;re not starting from zero.</p>
+        <h3>2. Faites reconnaître votre expérience</h3>
+        <p>Votre personne-ressource examine vos crédits d’études postsecondaires et votre expérience professionnelle afin de déterminer les acquis qui pourraient être reconnus dans le cadre de votre programme.</p>
       </li>
       <li>
-        <h3>3. Submit your application</h3>
-        <p>With your advisor&rsquo;s guidance, you&rsquo;ll pull together what&rsquo;s needed and submit your application, no guessing at the process on your own.</p>
+        <h3>3. Soumettez votre demande d’admission</h3>
+        <p>Votre personne-ressource vous accompagne dans la préparation des documents nécessaires et vous guide dans les différentes étapes de votre demande d’admission.</p>
       </li>
       <li>
-        <h3>4. Receive your decision</h3>
-        <p>Once you have an offer, our team can help you plan your first term, from enrolment through to your first login.</p>
+        <h3>4. Recevez votre décision d’admission</h3>
+        <p>Une fois votre offre d’admission reçue, notre équipe vous accompagne dans la préparation de votre première session, de l’inscription jusqu’à votre première connexion.</p>
       </li>
     </ol>
 
-    <a class="btn btn--red btn--pill" href="#">Start your application</a>
+    <a class="btn btn--red btn--pill" href="#">Commencer votre demande d’admission</a>
   </div>
 </section>
 
 <!-- ============================================================ FAQ -->
 <section class="section faq">
   <div class="container">
-    <h2 class="section-title">Frequently asked questions</h2>
+    <h2 class="section-title">Foire aux questions</h2>
 
     <div class="faq-list">
       <div class="faq-item is-open">
         <button class="faq-item__q" type="button" aria-expanded="true">
           <span class="faq-item__marker">&#9660;</span>
-          <span>What makes uOttawa Online different from other online programs?</span>
+          <span>Qu’est-ce qui distingue l’Université d’Ottawa en ligne des autres programmes en ligne?</span>
         </button>
         <div class="faq-item__a">
-          <p>The name on your degree. You&rsquo;re learning through a university with almost two centuries of academic history and U15 standing as one of Canada&rsquo;s 15 leading research-intensive institutions.</p>
+          <p>La réputation de l’établissement qui décerne votre diplôme constitue un avantage important. L’Université d’Ottawa compte près de deux siècles d’histoire et fait partie du U15, qui regroupe les principales universités de recherche du Canada.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>Do I need to stop working to study online?</span>
+          <span>Dois-je quitter mon emploi pour étudier en ligne?</span>
         </button>
-        <div class="faq-item__a"><p>No. uOttawa Online is built around learners who are already working.</p></div>
+        <div class="faq-item__a"><p>Non. Les programmes de l’Université d’Ottawa en ligne sont conçus pour vous permettre de concilier études et vie professionnelle. Leur formule flexible et les différentes périodes d’admission offertes au cours de l’année vous permettent de choisir le moment qui convient le mieux à votre réalité.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>Can international students apply?</span>
+          <span>Les étudiants internationaux peuvent-ils faire une demande d’admission?</span>
         </button>
-        <div class="faq-item__a"><p>Yes. Admission requirements and application steps are confirmed with your enrolment advisor.</p></div>
+        <div class="faq-item__a"><p>Oui. Avant de présenter une demande, vous devez toutefois communiquer avec une personne-ressource à l’admission. Les études en ligne sont soumises à des exigences particulières en matière de visa et de permis de travail au Canada. De plus, l’inscription à un programme en ligne ne donne pas nécessairement droit à un permis d’études canadien ou à un permis de travail postdiplôme. Notre équipe peut vous renseigner sur les exigences qui s’appliquent à votre situation.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>Is a uOttawa Online degree the same as one earned on campus?</span>
+          <span>Un diplôme obtenu à l’Université d’Ottawa en ligne est-il équivalent à un diplôme obtenu sur le campus?</span>
         </button>
-        <div class="faq-item__a"><p>Yes. The same faculty, the same standard, and the same credential.</p></div>
+        <div class="faq-item__a"><p>Oui. Vous obtenez un diplôme de l’Université d’Ottawa et bénéficiez d’un enseignement assuré par le même corps professoral, selon les mêmes normes universitaires. Votre diplôme ne fait aucune distinction entre les études suivies en ligne et celles suivies sur le campus.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>What programs does uOttawa Online offer?</span>
+          <span>Quels programmes sont offerts par l’Université d’Ottawa en ligne?</span>
         </button>
-        <div class="faq-item__a"><p>See Our programs above for the current list of online offerings.</p></div>
+        <div class="faq-item__a"><p>Les demandes d’admission sont maintenant ouvertes pour notre premier programme, le Baccalauréat ès arts en études interdisciplinaires (formule accélérée en ligne). L’offre de l’Université d’Ottawa en ligne s’élargira progressivement avec l’ajout de nouveaux programmes.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>Are there any on-campus requirements?</span>
+          <span>Une présence sur le campus est-elle obligatoire?</span>
         </button>
-        <div class="faq-item__a"><p>Programs listed as 100% online can be completed without coming to campus.</p></div>
+        <div class="faq-item__a"><p>Non. Vous pouvez suivre votre programme entièrement à distance, sans avoir à vous rendre sur le campus.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>What&rsquo;s the online learning experience like?</span>
+          <span>Comment se déroulent les études à l’Université d’Ottawa en ligne?</span>
         </button>
-        <div class="faq-item__a"><p>A mix of recorded lectures, short exercises, virtual office hours, and weekly assignments.</p></div>
+        <div class="faq-item__a"><p>Les études sont organisées par session et encadrées par le corps professoral. Tout au long de votre programme, vous échangez directement avec le personnel enseignant de l’Université d’Ottawa et avec une communauté étudiante aux parcours scolaires et professionnels variés.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>Will my previous college or university credit count?</span>
+          <span>Mes crédits d’études collégiales ou universitaires peuvent-ils être reconnus?</span>
         </button>
-        <div class="faq-item__a"><p>Often, yes. Your advisor reviews your prior credit through our transfer pathways.</p></div>
+        <div class="faq-item__a"><p>Souvent, oui. Les modalités varient selon le programme, mais les crédits et les acquis admissibles peuvent être reconnus dans votre parcours afin d’éviter de reprendre des cours ou des apprentissages déjà effectués.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-item__q" type="button" aria-expanded="false">
           <span class="faq-item__marker">&#9658;</span>
-          <span>Is financial aid available?</span>
+          <span>Une aide financière est-elle offerte?</span>
         </button>
-        <div class="faq-item__a"><p>Yes. Your advisor can walk you through the options available to you.</p></div>
+        <div class="faq-item__a"><p>Les possibilités d’aide financière varient selon le programme et votre situation. Notre équipe peut vous renseigner sur les options offertes, ainsi que sur les droits de scolarité et les modalités de paiement, afin de vous aider à planifier le financement de vos études.</p></div>
       </div>
     </div>
   </div>
@@ -346,7 +346,7 @@ get_header();
 <!-- ============================================================ ARTICLES -->
 <section class="section articles" id="articles">
   <div class="container">
-    <h2 class="section-title">Featured articles</h2>
+    <h2 class="section-title">Articles en vedette</h2>
 
     <div class="articles-grid">
       <?php
