@@ -16,10 +16,10 @@ get_header();
     <h1 class="section-title">
       <?php
       if ( is_home() ) {
-        esc_html_e( 'Latest articles', 'uottawa-online-fr' );
+        esc_html_e( 'Articles récents', 'uottawa-online-fr' );
       } elseif ( is_search() ) {
         /* translators: %s: search term */
-        printf( esc_html__( 'Search results for %s', 'uottawa-online-fr' ), '&ldquo;' . esc_html( get_search_query() ) . '&rdquo;' );
+        printf( esc_html__( 'Résultats de recherche pour %s', 'uottawa-online-fr' ), '&ldquo;' . esc_html( get_search_query() ) . '&rdquo;' );
       } else {
         the_archive_title();
       }
@@ -41,7 +41,7 @@ get_header();
               'title'   => get_the_title(),
               'excerpt' => wp_trim_words( get_the_excerpt(), 22 ),
               /* translators: 1: author name, 2: publish date */
-              'meta'    => sprintf( esc_html__( 'By %1$s | %2$s', 'uottawa-online-fr' ), get_the_author(), get_the_date() ),
+              'meta'    => sprintf( esc_html__( 'Par %1$s | %2$s', 'uottawa-online-fr' ), get_the_author(), get_the_date() ),
             )
           );
         endwhile;
@@ -53,7 +53,7 @@ get_header();
       </div>
 
     <?php else : ?>
-      <p class="lede"><?php esc_html_e( 'Nothing here yet. Please check back soon.', 'uottawa-online-fr' ); ?></p>
+      <p class="lede"><?php esc_html_e( 'Aucun contenu pour le moment. Revenez bientôt.', 'uottawa-online-fr' ); ?></p>
     <?php endif; ?>
   </div>
 </section>

@@ -186,9 +186,9 @@ function uottawa_link_atts( $url ) {
  */
 function uottawa_primary_menu_fallback() {
 	$items = array(
-		'online-programs'    => __( 'Online programs', 'uottawa-online-fr' ),
-		'student-experience' => __( 'Student experience', 'uottawa-online-fr' ),
-		'news-events'        => __( 'News &amp; events', 'uottawa-online-fr' ),
+		'online-programs'    => __( 'Programmes en ligne', 'uottawa-online-fr' ),
+		'student-experience' => __( 'Expérience étudiante', 'uottawa-online-fr' ),
+		'news-events'        => __( 'Actualités et événements', 'uottawa-online-fr' ),
 	);
 
 	echo '<ul>';
@@ -243,7 +243,7 @@ function uottawa_article_cards( $args = array() ) {
 			$kicker = $terms ? $terms[0]->name : $args['labels']['kicker'];
 			$meta   = sprintf(
 				/* translators: 1: author name, 2: publish date */
-				__( 'By %1$s | %2$s', 'uottawa-online-fr' ),
+				__( 'Par %1$s | %2$s', 'uottawa-online-fr' ),
 				get_the_author(),
 				get_the_date()
 			);
@@ -284,7 +284,7 @@ function uottawa_article_card( $card ) {
 			<?php if ( $card['media'] ) : ?>
 				<?php echo wp_kses_post( $card['media'] ); ?>
 			<?php else : ?>
-				<span class="article-card__placeholder"><?php esc_html_e( '[Image placeholder]', 'uottawa-online-fr' ); ?></span>
+				<span class="article-card__placeholder"><?php esc_html_e( '[Image à venir]', 'uottawa-online-fr' ); ?></span>
 			<?php endif; ?>
 		</div>
 		<div class="article-card__body">
@@ -292,7 +292,7 @@ function uottawa_article_card( $card ) {
 			<h3 class="article-card__title"><?php echo esc_html( $card['title'] ); ?></h3>
 			<p class="article-card__excerpt"><?php echo esc_html( $card['excerpt'] ); ?></p>
 			<p class="article-card__meta"><?php echo esc_html( $card['meta'] ); ?></p>
-			<a class="btn btn--red btn--read" href="<?php echo esc_url( $card['url'] ); ?>"><?php esc_html_e( 'Read more', 'uottawa-online-fr' ); ?></a>
+			<a class="btn btn--red btn--read" href="<?php echo esc_url( $card['url'] ); ?>"><?php esc_html_e( 'Lire la suite', 'uottawa-online-fr' ); ?></a>
 		</div>
 	</article>
 	<?php
@@ -308,11 +308,22 @@ function uottawa_article_card( $card ) {
 
 function uottawa_first_run() {
 	$pages = array(
-		'home'               => array( __( 'Home', 'uottawa-online-fr' ), 'page-home.php' ),
-		'online-programs'    => array( __( 'Online programs', 'uottawa-online-fr' ), 'page-landing.php' ),
-		'student-experience' => array( __( 'Student experience', 'uottawa-online-fr' ), 'page-student-experience.php' ),
-		'news-events'        => array( __( 'News & events', 'uottawa-online-fr' ), 'page-news-events.php' ),
-		'contact'            => array( __( 'Contact', 'uottawa-online-fr' ), 'page-contact.php' ),
+		'home'               => array( __( 'Accueil', 'uottawa-online-fr' ), 'page-home.php' ),
+		'online-programs'    => array( __( 'Programmes en ligne', 'uottawa-online-fr' ), 'page-landing.php' ),
+		'student-experience' => array( __( 'Expérience étudiante', 'uottawa-online-fr' ), 'page-student-experience.php' ),
+		'news-events'        => array( __( 'Actualités et événements', 'uottawa-online-fr' ), 'page-news-events.php' ),
+		'contact'            => array( __( 'Nous joindre', 'uottawa-online-fr' ), 'page-contact.php' ),
+	);
+
+	// Sites built before the pages were translated still carry the English
+	// titles, which is what the header menu shows. Rename those, and only
+	// those: a title someone has since edited is theirs and is left alone.
+	$renames = array(
+		'home'               => 'Home',
+		'online-programs'    => 'Online programs',
+		'student-experience' => 'Student experience',
+		'news-events'        => 'News & events',
+		'contact'            => 'Contact',
 	);
 
 	$ids = array();
@@ -357,6 +368,15 @@ function uottawa_first_run() {
 
 		if ( $existing ) {
 			$ids[ $slug ] = $existing->ID;
+
+			if ( isset( $renames[ $slug ] ) && $existing->post_title === $renames[ $slug ] ) {
+				wp_update_post(
+					array(
+						'ID'         => $existing->ID,
+						'post_title' => $page[0],
+					)
+				);
+			}
 		} else {
 			$id = wp_insert_post(
 				array(

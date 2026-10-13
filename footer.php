@@ -16,18 +16,18 @@
   <section class="cta">
     <div class="container">
       <div class="cta__text">
-        <h2 class="cta__title"><?php esc_html_e( 'Your degree is closer than you think', 'uottawa-online-fr' ); ?></h2>
-        <p class="cta__text-body"><?php esc_html_e( 'Build on your college diploma. Strengthen the human skills employers value. Earn a career-relevant degree 100% online.', 'uottawa-online-fr' ); ?></p>
+        <h2 class="cta__title"><?php esc_html_e( 'Votre diplôme universitaire est à votre portée', 'uottawa-online-fr' ); ?></h2>
+        <p class="cta__text-body"><?php esc_html_e( 'Valorisez votre diplôme d’études collégiales. Développez les compétences humaines les plus recherchées sur le marché du travail. Obtenez un diplôme universitaire entièrement en ligne, adapté aux réalités d’aujourd’hui.', 'uottawa-online-fr' ); ?></p>
       </div>
 
       <div class="cta__actions">
         <div class="cta__action">
-          <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'request' ) ); ?>"><?php esc_html_e( 'Request more info', 'uottawa-online-fr' ); ?></a>
-          <p><?php esc_html_e( 'Get program details, tuition information, and application instructions.', 'uottawa-online-fr' ); ?></p>
+          <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'request' ) ); ?>"><?php esc_html_e( 'Demander des renseignements', 'uottawa-online-fr' ); ?></a>
+          <p><?php esc_html_e( 'Découvrez le programme, les droits de scolarité et les étapes à suivre pour présenter une demande d’admission.', 'uottawa-online-fr' ); ?></p>
         </div>
         <div class="cta__action">
-          <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"><?php esc_html_e( 'Start your application', 'uottawa-online-fr' ); ?></a>
-          <p><?php esc_html_e( 'Begin your journey toward building in-demand, future-proof skills.', 'uottawa-online-fr' ); ?></p>
+          <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"><?php esc_html_e( 'Commencer votre demande d’admission', 'uottawa-online-fr' ); ?></a>
+          <p><?php esc_html_e( 'Préparez-vous à acquérir les compétences dont le marché du travail de demain a besoin.', 'uottawa-online-fr' ); ?></p>
         </div>
       </div>
     </div>
