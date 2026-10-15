@@ -3,7 +3,7 @@ Theme Name: uOttawa En ligne
 Theme URI: https://enligne.uottawa.ca
 Author: uOttawa Online
 Description: French companion to the uOttawa Online theme. Same design and templates; the copy is in French.
-Version: 1.4.0
+Version: 1.5.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -17,3 +17,36 @@ The real styles are split across assets/css/ and loaded from functions.php
 in this order: tokens -> base -> components -> sections -> mobile.
 This file only carries the theme header WordPress reads.
 */
+
+/* ==========================================================================
+   French-only overrides
+   This file is enqueued last, so anything here wins over assets/css/.
+   Keep it to the places French copy genuinely needs different treatment.
+   ========================================================================== */
+
+/* The header holds a menu, a language switch and two buttons. In French those
+   labels are long enough that the row stops fitting at about 1420px, well
+   above the 1024px where the design collapses it. Collapse it earlier here:
+   below 1451 the menu and the buttons move into the toggle panel, exactly as
+   they do on a tablet, so nothing is lost. */
+@media (max-width:1450px){
+  .site-header .container{ flex-wrap:wrap; }
+
+  .nav,
+  .header-actions{ display:none; }
+  .nav-toggle{ display:flex; order:2; margin-left:10px; }
+
+  /* The switch keeps the right edge; the toggle sits just after it. */
+  .header-lang,
+  .nav ~ .header-lang{ order:1; margin-left:auto; }
+
+  .site-header.is-open .nav,
+  .site-header.is-open .header-actions{
+    display:flex;
+    order:3;
+    flex-basis:100%;
+  }
+  .site-header.is-open .nav ul{ flex-direction:column; gap:14px; }
+  .site-header.is-open .nav{ margin-left:0; padding-top:16px; }
+  .site-header.is-open .header-actions{ padding-bottom:16px; }
+}
