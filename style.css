@@ -3,7 +3,7 @@ Theme Name: uOttawa En ligne
 Theme URI: https://enligne.uottawa.ca
 Author: uOttawa Online
 Description: French companion to the uOttawa Online theme. Same design and templates; the copy is in French.
-Version: 1.5.1
+Version: 1.5.2
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -26,7 +26,8 @@ This file only carries the theme header WordPress reads.
 
 /* The header holds a menu, a language switch and two buttons. In French those
    labels are long enough that the row stops fitting at about 1420px, well
-   above the 1024px where the design collapses it. Collapse it earlier here:
+   above the 1100px where the header otherwise collapses. Collapse it earlier
+   here:
    below 1451 the menu and the buttons move into the toggle panel, exactly as
    they do on a tablet, so nothing is lost. */
 @media (max-width:1450px){
@@ -37,8 +38,7 @@ This file only carries the theme header WordPress reads.
   .nav-toggle{ display:flex; order:2; margin-left:10px; }
 
   /* The switch keeps the right edge; the toggle sits just after it. */
-  .header-lang,
-  .nav ~ .header-lang{ order:1; margin-left:auto; }
+  .header-lang{ order:1; margin-left:auto; }
 
   .site-header.is-open .nav,
   .site-header.is-open .header-actions{
