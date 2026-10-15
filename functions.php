@@ -153,7 +153,7 @@ function uottawa_page_url( $slug ) {
  */
 function uottawa_cta_url( $which ) {
 	$defaults = array(
-		'apply'      => 'https://www.uottawa.ca/study/applying-uottawa',
+		'apply'      => 'https://www.uottawa.ca/etudes/faire-demande-admission',
 		'request'    => '/contact/',
 		// The copy deck calls for a course map download but does not name the
 		// file yet; set it under Appearance > Customize when it exists.
@@ -415,6 +415,19 @@ function uottawa_first_run() {
 		update_option( 'page_on_front', $ids['home'] );
 	}
 
+	// A site set up before the links were pointed at the French side may have
+	// the English page saved in the Customizer. Move only that exact value;
+	// anything else was chosen deliberately.
+	$english_apply = 'https://www.uottawa.ca/study/applying-uottawa';
+	if ( get_theme_mod( 'uottawa_apply_url' ) === $english_apply ) {
+		set_theme_mod( 'uottawa_apply_url', 'https://www.uottawa.ca/etudes/faire-demande-admission' );
+	}
+
+	$english_footer = '© University of Ottawa  |  Privacy  |  Accessibility';
+	if ( get_theme_mod( 'uottawa_footer_text' ) === $english_footer ) {
+		set_theme_mod( 'uottawa_footer_text', '© Université d’Ottawa  |  Confidentialité  |  Accessibilité' );
+	}
+
 	uottawa_first_run_menu( $ids );
 
 	// Pretty permalinks, unless the site already has a structure set.
@@ -532,9 +545,9 @@ function uottawa_customize( $wp_customize ) {
 	);
 
 	$fields = array(
-		'uottawa_apply_url'    => array( __( '"Apply now" link', 'uottawa-online-fr' ), 'https://www.uottawa.ca/study/applying-uottawa' ),
+		'uottawa_apply_url'    => array( __( '"Apply now" link', 'uottawa-online-fr' ), 'https://www.uottawa.ca/etudes/faire-demande-admission' ),
 		'uottawa_request_url'  => array( __( '"Request info" link', 'uottawa-online-fr' ), '/contact/' ),
-		'uottawa_footer_text'  => array( __( 'Footer text', 'uottawa-online-fr' ), '© University of Ottawa  |  Privacy  |  Accessibility' ),
+		'uottawa_footer_text'  => array( __( 'Footer text', 'uottawa-online-fr' ), '© Université d’Ottawa  |  Confidentialité  |  Accessibilité' ),
 		'uottawa_english_url'  => array( __( '"EN" language switch link', 'uottawa-online-fr' ), uottawa_english_url() ),
 	);
 

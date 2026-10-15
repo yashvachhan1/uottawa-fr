@@ -126,7 +126,7 @@ get_header();
         <div class="contact-links">
           <span class="contact-link contact-link--check">
             <img src="<?php echo esc_url( uottawa_asset( 'icons/icon-check.svg' ) ); ?>" width="53" height="53" alt="">
-            <a href="https://www.uottawa.ca/study/applying-uottawa" target="_blank" rel="noopener">Présenter ma demande</a>
+            <a href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"<?php echo uottawa_link_atts( uottawa_cta_url( 'apply' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>Présenter ma demande</a>
           </span>
         </div>
       </div>

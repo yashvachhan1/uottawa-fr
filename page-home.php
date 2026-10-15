@@ -16,8 +16,8 @@ get_header();
       <p class="page-hero__tagline">Poursuivez votre parcours, où que vous soyez.</p>
       <p class="page-hero__text">L’Université d’Ottawa s’appuie sur plus de 175 ans de tradition universitaire pour offrir une expérience d’apprentissage adaptée aux personnes qui concilient carrière, vie familiale et projets d’avenir. La même expertise du corps professoral. Les mêmes normes d’excellence. Une nouvelle façon d’étudier.</p>
       <div class="page-hero__actions">
-        <a class="btn btn--red btn--hero" href="#">Demande d’admission</a>
-        <a class="btn btn--outline-light btn--hero" href="#">Demander des renseignements</a>
+        <a class="btn btn--red btn--hero" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"<?php echo uottawa_link_atts( uottawa_cta_url( 'apply' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>Demande d’admission</a>
+        <a class="btn btn--outline-light btn--hero" href="<?php echo esc_url( uottawa_cta_url( 'request' ) ); ?>">Demander des renseignements</a>
       </div>
     </div>
   </div>
@@ -160,7 +160,7 @@ get_header();
     <article class="program-card">
       <h4>Baccalauréat ès arts en études interdisciplinaires (mode accéléré en ligne)</h4>
       <p>Ce programme s’adresse aux titulaires d’un diplôme d’études collégiales qui comptent au moins trois années d’expérience professionnelle et souhaitent s’appuyer sur leurs acquis pour obtenir un diplôme de l’Université d’Ottawa. Votre formation collégiale est reconnue grâce au transfert de crédits, et votre cheminement universitaire est conçu pour s’adapter à votre vie professionnelle.</p>
-      <a class="btn btn--red btn--program" href="#">Découvrir le programme</a>
+      <a class="btn btn--red btn--program" href="<?php echo esc_url( home_url( '/online-programs/' ) ); ?>">Découvrir le programme</a>
     </article>
   </div>
 </section>
@@ -222,7 +222,7 @@ get_header();
             <dd>Réservez une plus longue période pour terminer un travail.</dd>
           </dl>
         </article>
-        <a class="btn btn--red btn--pill day__cta" href="#">En savoir plus</a>
+        <a class="btn btn--red btn--pill day__cta" href="<?php echo esc_url( home_url( '/student-experience/' ) ); ?>">En savoir plus</a>
       </div>
       <div class="day-media">
         <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_3', uottawa_asset( 'img/37a62cab214313cb1ec754ace570845aadd6deb8.jpg' ) ) ); ?>" alt="">
@@ -256,7 +256,7 @@ get_header();
       </li>
     </ol>
 
-    <a class="btn btn--red btn--pill" href="#">Commencer votre demande d’admission</a>
+    <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"<?php echo uottawa_link_atts( uottawa_cta_url( 'apply' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>Commencer votre demande d’admission</a>
   </div>
 </section>
 

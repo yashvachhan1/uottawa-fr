@@ -26,7 +26,7 @@
           <p><?php esc_html_e( 'Découvrez le programme, les droits de scolarité et les étapes à suivre pour présenter une demande d’admission.', 'uottawa-online-fr' ); ?></p>
         </div>
         <div class="cta__action">
-          <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"><?php esc_html_e( 'Commencer votre demande d’admission', 'uottawa-online-fr' ); ?></a>
+          <a class="btn btn--red btn--pill" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"<?php echo uottawa_link_atts( uottawa_cta_url( 'apply' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>><?php esc_html_e( 'Commencer votre demande d’admission', 'uottawa-online-fr' ); ?></a>
           <p><?php esc_html_e( 'Préparez-vous à acquérir les compétences dont le marché du travail de demain a besoin.', 'uottawa-online-fr' ); ?></p>
         </div>
       </div>
