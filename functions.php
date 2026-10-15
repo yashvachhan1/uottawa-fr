@@ -67,6 +67,11 @@ function uottawa_assets() {
 		wp_enqueue_style( 'uottawa-landing', $dir . '/assets/css/landing.css', array( 'uottawa-online-fr' ), $v );
 	}
 
+	// The privacy policy keeps the microsite's own look, in its own file.
+	if ( is_page_template( 'page-privacy-policy.php' ) ) {
+		wp_enqueue_style( 'uottawa-legal', $dir . '/assets/css/legal.css', array( 'uottawa-online-fr' ), $v );
+	}
+
 	// Forminator draws its own markup, which needs bringing into line with
 	// whichever card it is standing in — the landing page's or the contact
 	// page's. Only loaded where a form is actually shown.
@@ -335,6 +340,7 @@ function uottawa_first_run() {
 		'student-experience' => array( __( 'Expérience étudiante', 'uottawa-online-fr' ), 'page-student-experience.php' ),
 		'news-events'        => array( __( 'Actualités et événements', 'uottawa-online-fr' ), 'page-news-events.php' ),
 		'contact'            => array( __( 'Nous joindre', 'uottawa-online-fr' ), 'page-contact.php' ),
+		'privacy-policy'     => array( __( 'Politique de confidentialité', 'uottawa-online-fr' ), 'page-privacy-policy.php' ),
 	);
 
 	// Sites built before the pages were translated still carry the English
