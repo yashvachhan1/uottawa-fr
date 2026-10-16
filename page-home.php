@@ -212,7 +212,7 @@ get_header();
            the photo beside it is taller and runs on past it. -->
       <div class="day-col">
         <article class="day-card">
-          <h4>Apprendre, encore et toujours</h4>
+          <h4>Le plaisir d’apprendre, à tout âge</h4>
           <dl class="day-list">
             <dt>Vendredi après-midi :</dt>
             <dd>Discutez de vos progrès avec votre conseiller·ère à la réussite étudiante.</dd>
