@@ -160,7 +160,7 @@ get_header();
     <article class="program-card">
       <h4>Baccalauréat ès arts en études interdisciplinaires (mode accéléré en ligne)</h4>
       <p>Ce programme s’adresse aux titulaires d’un diplôme d’études collégiales qui comptent au moins trois années d’expérience professionnelle et souhaitent s’appuyer sur leurs acquis pour obtenir un diplôme de l’Université d’Ottawa. Votre formation collégiale est reconnue grâce au transfert de crédits, et votre cheminement universitaire est conçu pour s’adapter à votre vie professionnelle.</p>
-      <a class="btn btn--red btn--program" href="<?php echo esc_url( home_url( '/online-programs/' ) ); ?>">Découvrir le programme</a>
+      <a class="btn btn--red btn--program" href="<?php echo esc_url( home_url( '/' . uottawa_program_slug() . '/' ) ); ?>">Découvrir le programme</a>
     </article>
   </div>
 </section>

@@ -168,6 +168,65 @@ function uottawa_english_url() {
 }
 
 /**
+ * The program page's slug, and its counterpart on the other language's site.
+ *
+ * The client set both: EN bachelor-of-arts-interdisciplinary-studies-online-accelerated,
+ * FR baccalaureat-es-arts-etudes-interdisciplinaire-accelere-en-ligne.
+ */
+function uottawa_program_slug() {
+	return 'baccalaureat-es-arts-etudes-interdisciplinaire-accelere-en-ligne';
+}
+
+function uottawa_program_slug_other() {
+	return 'bachelor-of-arts-interdisciplinary-studies-online-accelerated';
+}
+
+/**
+ * The slug the program page used to carry. A site built before the rename
+ * still has it, and links to it are already out in the world.
+ */
+function uottawa_program_slug_old() {
+	return 'online-programs';
+}
+
+/**
+ * The two sites name the program page differently, so the language switch
+ * cannot just carry the path across for that one page.
+ */
+function uottawa_program_slug_map( $map ) {
+	$map[ uottawa_program_slug() ]     = uottawa_program_slug_other();
+	$map[ uottawa_program_slug_old() ] = uottawa_program_slug_other();
+
+	return $map;
+}
+add_filter( 'uottawa_language_slug_map', 'uottawa_program_slug_map' );
+
+/**
+ * Send the old program-page URL to the new one rather than to a 404.
+ */
+function uottawa_program_slug_redirect() {
+	if ( is_admin() || ! isset( $_SERVER['REQUEST_URI'] ) ) {
+		return;
+	}
+
+	$path = trim( (string) wp_parse_url( esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ), PHP_URL_PATH ), '/' );
+
+	if ( uottawa_program_slug_old() !== $path ) {
+		return;
+	}
+
+	$page = get_page_by_path( uottawa_program_slug() );
+
+	if ( ! $page ) {
+		return;
+	}
+
+	wp_safe_redirect( get_permalink( $page ), 301 );
+	exit;
+}
+add_action( 'template_redirect', 'uottawa_program_slug_redirect', 1 );
+
+/**
  * URL of a page by slug, falling back to the home page if it does not exist yet.
  */
 function uottawa_page_url( $slug ) {
@@ -252,7 +311,7 @@ function uottawa_logo_url() {
 function uottawa_primary_menu_fallback() {
 	$items = array(
 		'home'               => __( 'Accueil', 'uottawa-online-fr' ),
-		'online-programs'    => __( 'Programmes en ligne', 'uottawa-online-fr' ),
+		uottawa_program_slug() => __( 'Programmes en ligne', 'uottawa-online-fr' ),
 		'student-experience' => __( 'Expérience étudiante', 'uottawa-online-fr' ),
 		'news-events'        => __( 'Actualités et événements', 'uottawa-online-fr' ),
 	);
@@ -380,7 +439,7 @@ function uottawa_article_card( $card ) {
 function uottawa_first_run() {
 	$pages = array(
 		'home'               => array( __( 'Accueil', 'uottawa-online-fr' ), 'page-home.php' ),
-		'online-programs'    => array( __( 'Programmes en ligne', 'uottawa-online-fr' ), 'page-landing.php' ),
+		uottawa_program_slug() => array( __( 'Programmes en ligne', 'uottawa-online-fr' ), 'page-landing.php' ),
 		'student-experience' => array( __( 'Expérience étudiante', 'uottawa-online-fr' ), 'page-student-experience.php' ),
 		'news-events'        => array( __( 'Actualités et événements', 'uottawa-online-fr' ), 'page-news-events.php' ),
 		'contact'            => array( __( 'Nous joindre', 'uottawa-online-fr' ), 'page-contact.php' ),
@@ -397,6 +456,20 @@ function uottawa_first_run() {
 		'news-events'        => 'News & events',
 		'contact'            => 'Contact',
 	);
+
+	// The program page was set up under its old slug. Move it across once,
+	// and only while it still carries that slug — a slug someone has since
+	// chosen is theirs.
+	$old = get_page_by_path( uottawa_program_slug_old() );
+
+	if ( $old && ! get_page_by_path( uottawa_program_slug() ) ) {
+		wp_update_post(
+			array(
+				'ID'        => $old->ID,
+				'post_name' => uottawa_program_slug(),
+			)
+		);
+	}
 
 	$ids = array();
 
@@ -637,7 +710,7 @@ function uottawa_first_run_menu( $ids ) {
 	}
 
 	if ( ! wp_get_nav_menu_items( $menu_id ) ) {
-		foreach ( array( 'home', 'online-programs', 'student-experience', 'news-events' ) as $slug ) {
+		foreach ( array( 'home', uottawa_program_slug(), 'student-experience', 'news-events' ) as $slug ) {
 			if ( ! isset( $ids[ $slug ] ) ) {
 				continue;
 			}
