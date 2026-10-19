@@ -20,7 +20,7 @@
   <!-- ============================================================ HEADER -->
   <header class="site-header" id="site-header">
     <div class="container">
-      <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Accueil uOttawa', 'uottawa-online-fr' ); ?>">
+      <a class="logo" href="<?php echo esc_url( uottawa_logo_url() ); ?>" aria-label="<?php esc_attr_e( 'Accueil uOttawa', 'uottawa-online-fr' ); ?>">
         <img class="logo__img" src="<?php echo esc_url( uottawa_asset( 'icons/logo.png' ) ); ?>" width="148" height="38" alt="uOttawa" />
       </a>
 
@@ -42,13 +42,14 @@
         ?>
       </nav>
 
-      <div class="header-lang">
-        <a class="btn btn--lang" href="<?php echo esc_url( uottawa_english_url() ); ?>" rel="noopener" lang="en" title="Site in English">EN</a>
-      </div>
 
       <div class="header-actions">
         <a class="btn btn--red btn--sm" href="<?php echo esc_url( uottawa_cta_url( 'apply' ) ); ?>"<?php echo uottawa_link_atts( uottawa_cta_url( 'apply' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>><?php esc_html_e( 'Demande d&rsquo;admission', 'uottawa-online-fr' ); ?></a>
         <a class="btn btn--outline-dark btn--sm" href="<?php echo esc_url( uottawa_cta_url( 'request' ) ); ?>"><?php esc_html_e( 'Demander des renseignements', 'uottawa-online-fr' ); ?></a>
+      </div>
+
+      <div class="header-lang">
+        <a class="btn--lang" href="<?php echo esc_url( uottawa_language_switch_url() ); ?>" rel="noopener" lang="en" title="Site in English">EN</a>
       </div>
     </div>
   </header>

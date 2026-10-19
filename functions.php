@@ -209,10 +209,49 @@ function uottawa_link_atts( $url ) {
 }
 
 /**
+ * Where the language switch sends you: the same page on the other site, not
+ * its home page.
+ *
+ * Both sites use the same slugs today, so the path carries across as it is.
+ * Should one side's slugs ever be translated, map them through the
+ * uottawa_language_slug_map filter rather than changing this.
+ */
+function uottawa_language_switch_url() {
+	$base = untrailingslashit( uottawa_english_url() );
+	$map  = (array) apply_filters( 'uottawa_language_slug_map', array() );
+
+	if ( is_front_page() || is_home() ) {
+		return $base . '/';
+	}
+
+	$object = get_queried_object();
+	$slug   = ( $object instanceof WP_Post ) ? $object->post_name : '';
+
+	if ( ! $slug ) {
+		return $base . '/';
+	}
+
+	if ( isset( $map[ $slug ] ) ) {
+		$slug = $map[ $slug ];
+	}
+
+	return $base . '/' . $slug . '/';
+}
+
+/**
+ * Where the uOttawa lockup in the header points: the university's own site,
+ * in this site's language.
+ */
+function uottawa_logo_url() {
+	return get_theme_mod( 'uottawa_logo_url', 'https://www.uottawa.ca/fr' );
+}
+
+/**
  * Header navigation when no menu has been assigned yet.
  */
 function uottawa_primary_menu_fallback() {
 	$items = array(
+		'home'               => __( 'Accueil', 'uottawa-online-fr' ),
 		'online-programs'    => __( 'Programmes en ligne', 'uottawa-online-fr' ),
 		'student-experience' => __( 'Expérience étudiante', 'uottawa-online-fr' ),
 		'news-events'        => __( 'Actualités et événements', 'uottawa-online-fr' ),
@@ -522,10 +561,66 @@ function uottawa_maybe_first_run() {
 add_action( 'admin_init', 'uottawa_maybe_first_run' );
 
 /**
+ * Put the home page at the front of an existing header menu.
+ *
+ * The menu was built before the design called for it, so a site set up
+ * earlier is missing it. Added once, and only if it is not there already —
+ * a menu someone has since arranged is otherwise left alone.
+ */
+function uottawa_menu_add_home( $ids ) {
+	if ( empty( $ids['home'] ) ) {
+		return;
+	}
+
+	$menu_id = (int) ( get_theme_mod( 'nav_menu_locations', array() )['primary'] ?? 0 );
+
+	if ( ! $menu_id ) {
+		return;
+	}
+
+	$items = wp_get_nav_menu_items( $menu_id );
+
+	if ( ! is_array( $items ) ) {
+		return;
+	}
+
+	foreach ( $items as $item ) {
+		if ( 'post_type' === $item->type && (int) $item->object_id === (int) $ids['home'] ) {
+			return;
+		}
+	}
+
+	$new_id = wp_update_nav_menu_item(
+		$menu_id,
+		0,
+		array(
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => (int) $ids['home'],
+			'menu-item-type'      => 'post_type',
+			'menu-item-status'    => 'publish',
+		)
+	);
+
+	if ( is_wp_error( $new_id ) ) {
+		return;
+	}
+
+	// A new item lands at the end. Renumber so it leads and the rest keep
+	// the order they were already in.
+	$order = 1;
+	wp_update_post( array( 'ID' => $new_id, 'menu_order' => $order++ ) );
+
+	foreach ( $items as $item ) {
+		wp_update_post( array( 'ID' => $item->ID, 'menu_order' => $order++ ) );
+	}
+}
+
+/**
  * Build the header menu and assign it, without touching an existing one.
  */
 function uottawa_first_run_menu( $ids ) {
 	if ( has_nav_menu( 'primary' ) ) {
+		uottawa_menu_add_home( $ids );
 		return;
 	}
 
@@ -542,7 +637,7 @@ function uottawa_first_run_menu( $ids ) {
 	}
 
 	if ( ! wp_get_nav_menu_items( $menu_id ) ) {
-		foreach ( array( 'online-programs', 'student-experience', 'news-events' ) as $slug ) {
+		foreach ( array( 'home', 'online-programs', 'student-experience', 'news-events' ) as $slug ) {
 			if ( ! isset( $ids[ $slug ] ) ) {
 				continue;
 			}
@@ -649,6 +744,7 @@ function uottawa_customize( $wp_customize ) {
 		'uottawa_footer_text'  => array( __( 'Footer text', 'uottawa-online-fr' ), '© Université d’Ottawa  |  Confidentialité  |  Accessibilité' ),
 		'uottawa_privacy_url'  => array( __( '"Privacy" link (blank: the site&rsquo;s privacy page)', 'uottawa-online-fr' ), '' ),
 		'uottawa_accessibility_url' => array( __( '"Accessibility" link (blank: not a link)', 'uottawa-online-fr' ), '' ),
+		'uottawa_logo_url'     => array( __( 'uOttawa logo link', 'uottawa-online-fr' ), uottawa_logo_url() ),
 		'uottawa_english_url'  => array( __( '"EN" language switch link', 'uottawa-online-fr' ), uottawa_english_url() ),
 	);
 
