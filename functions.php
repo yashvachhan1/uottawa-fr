@@ -222,6 +222,22 @@ function uottawa_page_url( $slug ) {
 }
 
 /**
+ * The page a template is assigned to, if there is one.
+ */
+function uottawa_page_by_template( $template ) {
+	$found = get_posts(
+		array(
+			'post_type'   => 'page',
+			'numberposts' => 1,
+			'meta_key'    => '_wp_page_template',
+			'meta_value'  => $template,
+		)
+	);
+
+	return $found ? $found[0] : null;
+}
+
+/**
  * The program page, wherever it currently sits.
  *
  * Its slug changed, and a site only moves across when setup next runs, so
@@ -864,9 +880,16 @@ function uottawa_privacy_slug_old() {
 }
 
 function uottawa_privacy_page() {
-	$page = get_page_by_path( uottawa_privacy_slug() );
+	foreach ( array( uottawa_privacy_slug(), uottawa_privacy_slug_old() ) as $slug ) {
+		$page = get_page_by_path( $slug );
 
-	return $page ? $page : get_page_by_path( uottawa_privacy_slug_old() );
+		if ( $page ) {
+			return $page;
+		}
+	}
+
+	// Renamed to something else again: the template still identifies it.
+	return uottawa_page_by_template( 'page-privacy-policy.php' );
 }
 
 /**
