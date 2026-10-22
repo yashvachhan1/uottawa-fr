@@ -482,7 +482,7 @@ function uottawa_first_run() {
 		'student-experience' => array( __( 'Expérience étudiante', 'uottawa-online-fr' ), 'page-student-experience.php' ),
 		'news-events'        => array( __( 'Actualités et événements', 'uottawa-online-fr' ), 'page-news-events.php' ),
 		'contact'            => array( __( 'Nous joindre', 'uottawa-online-fr' ), 'page-contact.php' ),
-		'privacy-policy'     => array( __( 'Politique de confidentialité', 'uottawa-online-fr' ), 'page-privacy-policy.php' ),
+		uottawa_privacy_slug() => array( __( 'Politique de confidentialité', 'uottawa-online-fr' ), 'page-privacy-policy.php' ),
 	);
 
 	// Sites built before the pages were translated still carry the English
@@ -494,7 +494,24 @@ function uottawa_first_run() {
 		'student-experience' => 'Student experience',
 		'news-events'        => 'News & events',
 		'contact'            => 'Contact',
+		uottawa_privacy_slug() => 'Privacy policy',
 	);
+
+	// The privacy page was set up under the English slug before this site
+	// named it in French. Move it across once, and only while it still
+	// carries that slug.
+	if ( ! get_page_by_path( uottawa_privacy_slug() ) ) {
+		$was = get_page_by_path( uottawa_privacy_slug_old() );
+
+		if ( $was ) {
+			wp_update_post(
+				array(
+					'ID'        => $was->ID,
+					'post_name' => uottawa_privacy_slug(),
+				)
+			);
+		}
+	}
 
 	// The program page may be sitting under the slug it used to have, or
 	// under the other language's, if this install has been through the
@@ -814,7 +831,7 @@ function uottawa_footer_line() {
 
 /**
  * Where "Privacy" points: the Customizer field, else the page WordPress has
- * set as its privacy policy, else a page at /privacy-policy/.
+ * set as its privacy policy, else the page itself.
  */
 function uottawa_privacy_url() {
 	$set = get_theme_mod( 'uottawa_privacy_url', '' );
@@ -829,9 +846,27 @@ function uottawa_privacy_url() {
 		return $url;
 	}
 
-	$page = get_page_by_path( 'privacy-policy' );
+	$page = uottawa_privacy_page();
 
 	return $page ? get_permalink( $page ) : '';
+}
+
+/**
+ * This site names the page in French. A site set up before that still has it
+ * under the English slug, so look there too.
+ */
+function uottawa_privacy_slug() {
+	return 'politique-de-confidentialite';
+}
+
+function uottawa_privacy_slug_old() {
+	return 'privacy-policy';
+}
+
+function uottawa_privacy_page() {
+	$page = get_page_by_path( uottawa_privacy_slug() );
+
+	return $page ? $page : get_page_by_path( uottawa_privacy_slug_old() );
 }
 
 /**
