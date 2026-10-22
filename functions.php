@@ -20,6 +20,7 @@ require_once get_template_directory() . '/inc/landing-page.php';
 require_once get_template_directory() . '/inc/page-images.php';
 require_once get_template_directory() . '/inc/page-form.php';
 require_once get_template_directory() . '/inc/language-link.php';
+require_once get_template_directory() . '/inc/demo-post.php';
 
 /* -------------------------------------------------------------------------
  * Setup
@@ -653,6 +654,10 @@ function uottawa_first_run() {
 	}
 
 	uottawa_first_run_menu( $ids );
+
+	// Un vrai billet de blogue, pour que la rangée d'actualités et la mise en
+	// page d'un billet aient quelque chose à montrer sur un site encore vide.
+	uottawa_demo_post();
 
 	// Pretty permalinks, unless the site already has a structure set.
 	if ( ! get_option( 'permalink_structure' ) ) {
