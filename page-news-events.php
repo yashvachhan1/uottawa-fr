@@ -6,7 +6,7 @@ get_header();
 <!-- ============================================================ HERO -->
 <section class="page-hero page-hero--inner">
   <div class="page-hero__bg">
-    <img src="<?php echo esc_url( uottawa_page_image( 'img_news_hero', uottawa_asset( 'img/007bc2f82e5e246d911896471b7b9f9f39c57034.jpg' ) ) ); ?>" alt="">
+    <img src="<?php echo esc_url( uottawa_page_image( 'img_news_hero', uottawa_asset( 'img/007bc2f82e5e246d911896471b7b9f9f39c57034.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_news_hero', 'Deux collègues qui discutent et rient de part et d’autre d’un bureau, dans un espace de travail lumineux' ) ); ?>">
   </div>
 
   <div class="container">

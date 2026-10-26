@@ -6,7 +6,7 @@ get_header();
 <!-- ============================================================ HERO -->
 <section class="page-hero">
   <div class="page-hero__bg">
-    <img src="<?php echo esc_url( uottawa_page_image( 'img_home_hero', uottawa_asset( 'img/007bc2f82e5e246d911896471b7b9f9f39c57034.jpg' ) ) ); ?>" alt="">
+    <img src="<?php echo esc_url( uottawa_page_image( 'img_home_hero', uottawa_asset( 'img/007bc2f82e5e246d911896471b7b9f9f39c57034.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_hero', 'Deux collègues qui discutent et rient de part et d’autre d’un bureau, dans un espace de travail lumineux' ) ); ?>">
   </div>
 
   <div class="container">
@@ -119,7 +119,7 @@ get_header();
     <div class="beyond-grid">
       <article class="beyond-item">
         <div class="beyond-item__media">
-          <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_1', uottawa_asset( 'img/1db0caf7dba8f8cfcd2ab1b78c55589d2203dad2.jpg' ) ) ); ?>" alt="">
+          <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_1', uottawa_asset( 'img/1db0caf7dba8f8cfcd2ab1b78c55589d2203dad2.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_beyond_1', 'Une femme sourit devant son ordinateur portable à la table à manger pendant que sa famille est assise sur le canapé derrière elle' ) ); ?>">
         </div>
         <div class="beyond-item__body">
           <h4>Un plus grand bien-être</h4>
@@ -129,7 +129,7 @@ get_header();
 
       <article class="beyond-item">
         <div class="beyond-item__media">
-          <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_2', uottawa_asset( 'img/9755731fb6ea8b22a9d25e00c68d1d505c1bfdbb.jpg' ) ) ); ?>" alt="">
+          <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_2', uottawa_asset( 'img/9755731fb6ea8b22a9d25e00c68d1d505c1bfdbb.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_beyond_2', 'Un homme, un stylo à la main, sourit devant son écran dans un bureau à aire ouverte animé' ) ); ?>">
         </div>
         <div class="beyond-item__body">
           <h4>Un sentiment d’accomplissement renouvelé</h4>
@@ -139,7 +139,7 @@ get_header();
 
       <article class="beyond-item">
         <div class="beyond-item__media">
-          <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_3', uottawa_asset( 'img/07662f640130e427d17ab41521cec900d86b8ee3.jpg' ) ) ); ?>" alt="">
+          <img src="<?php echo esc_url( uottawa_page_image( 'img_home_beyond_3', uottawa_asset( 'img/07662f640130e427d17ab41521cec900d86b8ee3.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_beyond_3', 'Une femme en tailleur sourit en posant ses notes sur une table de travail partagée' ) ); ?>">
         </div>
         <div class="beyond-item__body">
           <h4>Un avenir professionnel plus prometteur</h4>
@@ -186,7 +186,7 @@ get_header();
         </dl>
       </article>
       <div class="day-media">
-        <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_1', uottawa_asset( 'img/3e1772b0e58a5483675ed988eb03ba7aea539c1f.jpg' ) ) ); ?>" alt="">
+        <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_1', uottawa_asset( 'img/3e1772b0e58a5483675ed988eb03ba7aea539c1f.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_day_1', 'Une femme travaille à l’ordinateur dans un espace d’étude partagé' ) ); ?>">
       </div>
     </div>
 
@@ -203,7 +203,7 @@ get_header();
         </dl>
       </article>
       <div class="day-media">
-        <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_2', uottawa_asset( 'img/ec6f254c02d7b4af1e49d4a14a837ca24d7ebcbb.jpg' ) ) ); ?>" alt="">
+        <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_2', uottawa_asset( 'img/ec6f254c02d7b4af1e49d4a14a837ca24d7ebcbb.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_day_2', 'Une femme tient son bébé d’un bras tout en travaillant à l’ordinateur portable dans sa cuisine' ) ); ?>">
       </div>
     </div>
 
@@ -225,7 +225,7 @@ get_header();
         <a class="btn btn--red btn--pill day__cta" href="<?php echo esc_url( home_url( '/student-experience/' ) ); ?>">En savoir plus</a>
       </div>
       <div class="day-media">
-        <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_3', uottawa_asset( 'img/37a62cab214313cb1ec754ace570845aadd6deb8.jpg' ) ) ); ?>" alt="">
+        <img src="<?php echo esc_url( uottawa_page_image( 'img_home_day_3', uottawa_asset( 'img/37a62cab214313cb1ec754ace570845aadd6deb8.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_home_day_3', 'Un homme s’arrête pour réfléchir devant son ordinateur portable à la table de cuisine, un cahier et un casque à côté de lui' ) ); ?>">
       </div>
     </div>
   </div>

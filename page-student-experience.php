@@ -6,7 +6,7 @@ get_header();
 <!-- ============================================================ HERO -->
 <section class="page-hero page-hero--inner">
   <div class="page-hero__bg">
-    <img src="<?php echo esc_url( uottawa_page_image( 'img_se_hero', uottawa_asset( 'img/007bc2f82e5e246d911896471b7b9f9f39c57034.jpg' ) ) ); ?>" alt="">
+    <img src="<?php echo esc_url( uottawa_page_image( 'img_se_hero', uottawa_asset( 'img/007bc2f82e5e246d911896471b7b9f9f39c57034.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_hero', 'Deux collègues qui discutent et rient de part et d’autre d’un bureau, dans un espace de travail lumineux' ) ); ?>">
   </div>
 
   <div class="container">
@@ -103,7 +103,7 @@ get_header();
         </dl>
       </article>
       <div class="day-media">
-        <img src="<?php echo esc_url( uottawa_page_image( 'img_se_day_1', uottawa_asset( 'img/3e1772b0e58a5483675ed988eb03ba7aea539c1f.jpg' ) ) ); ?>" alt="">
+        <img src="<?php echo esc_url( uottawa_page_image( 'img_se_day_1', uottawa_asset( 'img/3e1772b0e58a5483675ed988eb03ba7aea539c1f.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_day_1', 'Une femme travaille à l’ordinateur dans un espace d’étude partagé' ) ); ?>">
       </div>
     </div>
 
@@ -120,7 +120,7 @@ get_header();
         </dl>
       </article>
       <div class="day-media">
-        <img src="<?php echo esc_url( uottawa_page_image( 'img_se_day_2', uottawa_asset( 'img/ec6f254c02d7b4af1e49d4a14a837ca24d7ebcbb.jpg' ) ) ); ?>" alt="">
+        <img src="<?php echo esc_url( uottawa_page_image( 'img_se_day_2', uottawa_asset( 'img/ec6f254c02d7b4af1e49d4a14a837ca24d7ebcbb.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_day_2', 'Une femme tient son bébé d’un bras tout en travaillant à l’ordinateur portable dans sa cuisine' ) ); ?>">
       </div>
     </div>
 
@@ -139,7 +139,7 @@ get_header();
         </article>
       </div>
       <div class="day-media">
-        <img src="<?php echo esc_url( uottawa_page_image( 'img_se_day_3', uottawa_asset( 'img/37a62cab214313cb1ec754ace570845aadd6deb8.jpg' ) ) ); ?>" alt="">
+        <img src="<?php echo esc_url( uottawa_page_image( 'img_se_day_3', uottawa_asset( 'img/37a62cab214313cb1ec754ace570845aadd6deb8.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_day_3', 'Un homme s’arrête pour réfléchir devant son ordinateur portable à la table de cuisine, un cahier et un casque à côté de lui' ) ); ?>">
       </div>
     </div>
   </div>
@@ -184,7 +184,7 @@ get_header();
 
     <div class="outcomes-grid">
       <article class="outcome">
-        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_main', uottawa_asset( 'img/1db0caf7dba8f8cfcd2ab1b78c55589d2203dad2.jpg' ) ) ); ?>" alt=""></div>
+        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_main', uottawa_asset( 'img/1db0caf7dba8f8cfcd2ab1b78c55589d2203dad2.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_grad_main', 'Une femme sourit devant son ordinateur portable à la table à manger pendant que sa famille est assise sur le canapé derrière elle' ) ); ?>"></div>
         <div class="outcome__body">
           <h4>Une reconnaissance au Canada et à l’international</h4>
           <p>Un diplôme de l’Université d’Ottawa reconnu au Canada comme à l’international et équivalent à celui obtenu sur le campus.</p>
@@ -192,7 +192,7 @@ get_header();
       </article>
 
       <article class="outcome">
-        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_1', uottawa_asset( 'img/9755731fb6ea8b22a9d25e00c68d1d505c1bfdbb.jpg' ) ) ); ?>" alt=""></div>
+        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_1', uottawa_asset( 'img/9755731fb6ea8b22a9d25e00c68d1d505c1bfdbb.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_grad_1', 'Un homme, un stylo à la main, sourit devant son écran dans un bureau à aire ouverte animé' ) ); ?>"></div>
         <div class="outcome__body">
           <h4>Une carrière sans interruption</h4>
           <p>Un diplôme obtenu tout en poursuivant votre carrière vous permet de conjuguer formation universitaire et expérience professionnelle, deux atouts recherchés sur le marché du travail.</p>
@@ -200,7 +200,7 @@ get_header();
       </article>
 
       <article class="outcome">
-        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_2', uottawa_asset( 'img/07662f640130e427d17ab41521cec900d86b8ee3.jpg' ) ) ); ?>" alt=""></div>
+        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_2', uottawa_asset( 'img/07662f640130e427d17ab41521cec900d86b8ee3.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_grad_2', 'Une femme en tailleur sourit en posant ses notes sur une table de travail partagée' ) ); ?>"></div>
         <div class="outcome__body">
           <h4>Une ouverture sur l’avenir</h4>
           <p>Votre diplôme vous permet d’accéder à des études supérieures, à des certifications professionnelles et à des parcours qui vont au-delà des possibilités offertes par votre formation antérieure.</p>
@@ -208,7 +208,7 @@ get_header();
       </article>
 
       <article class="outcome">
-        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_3', uottawa_asset( 'img/3e1772b0e58a5483675ed988eb03ba7aea539c1f.jpg' ) ) ); ?>" alt=""></div>
+        <div class="outcome__media"><img src="<?php echo esc_url( uottawa_page_image( 'img_se_grad_3', uottawa_asset( 'img/3e1772b0e58a5483675ed988eb03ba7aea539c1f.jpg' ) ) ); ?>" alt="<?php echo esc_attr( uottawa_page_image_alt( 'img_se_grad_3', 'Une femme travaille à l’ordinateur dans un espace d’étude partagé' ) ); ?>"></div>
         <div class="outcome__body">
           <h4>Un réseau international</h4>
           <p>Vous rejoignez une communauté de plus de 280 000 diplômé·e·s de l’Université d’Ottawa au Canada et partout dans le monde.</p>
