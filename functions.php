@@ -306,11 +306,13 @@ function uottawa_link_atts( $url ) {
 /**
  * Forminator's own English wording, in French.
  *
- * A required dropdown with no placeholder of its own falls back to the
- * plugin's "Please select an option", which the plugin only ships in
- * English - so an otherwise French form read English at every dropdown.
- * Translating the string covers every form on the site, including ones this
- * theme did not build, without anyone editing a field.
+ * A field with no message of its own falls back to the plugin's own wording,
+ * which the plugin only ships in English - so an otherwise French form read
+ * English at every dropdown and every validation error. Translating those
+ * strings covers every form on the site, including ones this theme did not
+ * build, without anyone editing a field.
+ *
+ * A message typed into a field still wins: this is only the fallback.
  *
  * @param string $translation Translated text.
  * @param string $text        Original text.
@@ -322,8 +324,20 @@ function uottawa_forminator_fr( $translation, $text, $domain ) {
 	}
 
 	$strings = array(
-		'Please select an option' => 'Veuillez choisir une option.',
-		'Select an option'        => 'Veuillez choisir une option.',
+		'Please select an option'                                 => 'Veuillez choisir une option.',
+		'Select an option'                                        => 'Veuillez choisir une option.',
+		'This field is required. Please check it.'                => 'Veuillez cocher cette case pour continuer.',
+		'This field is required. Please enter text.'              => 'Ce champ est obligatoire.',
+		'This field is required. Please select a value.'          => 'Veuillez choisir une option.',
+		'This field is required. Please input a valid email.'     => 'Veuillez entrer une adresse courriel valide.',
+		'This field is required. Please input a phone number.'    => 'Veuillez entrer votre numéro de téléphone.',
+		'This field is required. Please input your name.'         => 'Veuillez entrer votre nom.',
+		'This field is required. Please input your first name.'   => 'Veuillez entrer votre prénom.',
+		'This field is required. Please input your last name.'    => 'Veuillez entrer votre nom de famille.',
+		'Please enter a valid phone number.'                      => 'Veuillez entrer un numéro de téléphone valide.',
+		'Please enter a valid email'                              => 'Veuillez entrer une adresse courriel valide.',
+		'Please fill in the required fields.'                     => 'Veuillez remplir les champs obligatoires.',
+		'Please fill in all required fields.'                     => 'Veuillez remplir les champs obligatoires.',
 	);
 
 	return isset( $strings[ $text ] ) ? $strings[ $text ] : $translation;
