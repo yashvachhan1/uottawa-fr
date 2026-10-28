@@ -25,6 +25,22 @@ get_header();
             <p>Apprenez-en plus sur les conditions d’admission, les dates limites pour présenter une demande et les prochaines étapes.</p>
           </div>
         </div>
+
+        <div class="contact-aside">
+          <h2 class="section-title">Questions générales</h2>
+          <p class="contact-lead">Notre équipe vous accompagne dans vos démarches en répondant à vos questions et en vous orientant vers les ressources appropriées.</p>
+
+          <div class="contact-links">
+            <span class="contact-link">
+              <img src="<?php echo esc_url( uottawa_asset( 'icons/icon-email.svg' ) ); ?>" width="73" height="73" alt="">
+              <a href="mailto:admissions@online.uottawa.ca">admissions@online.uottawa.ca</a>
+            </span>
+            <span class="contact-link contact-link--sm">
+              <img src="<?php echo esc_url( uottawa_asset( 'icons/icon-phone.svg' ) ); ?>" width="41" height="41" alt="">
+              <a href="tel:+16133177079">+1 (613) 317-7079</a>
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- Enquiry form -->
@@ -112,22 +128,6 @@ get_header();
     </div>
 
     <div class="contact-row">
-      <div>
-        <h2 class="section-title">Questions générales</h2>
-        <p class="contact-lead">Notre équipe vous accompagne dans vos démarches en répondant à vos questions et en vous orientant vers les ressources appropriées.</p>
-
-        <div class="contact-links">
-          <span class="contact-link">
-            <img src="<?php echo esc_url( uottawa_asset( 'icons/icon-email.svg' ) ); ?>" width="73" height="73" alt="">
-            <a href="mailto:admissions@online.uottawa.ca">admissions@online.uottawa.ca</a>
-          </span>
-          <span class="contact-link contact-link--sm">
-            <img src="<?php echo esc_url( uottawa_asset( 'icons/icon-phone.svg' ) ); ?>" width="41" height="41" alt="">
-            <a href="tel:+16133177079">+1 (613) 317-7079</a>
-          </span>
-        </div>
-      </div>
-
       <div>
         <h2 class="section-title">Vous souhaitez présenter une demande?</h2>
         <p class="contact-lead">Utilisez le lien ci-dessous pour commencer votre demande.</p>
