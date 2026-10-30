@@ -358,8 +358,6 @@ function uottawa_forminator_fr( $translation, $text, $domain ) {
 		'Please enter a valid email'                              => 'Veuillez entrer une adresse courriel valide.',
 		'Please fill in the required fields.'                     => 'Veuillez remplir les champs obligatoires.',
 		'Please fill in all required fields.'                     => 'Veuillez remplir les champs obligatoires.',
-		'Form entry saved'                                        => 'Merci ! Votre demande a bien été envoyée.',
-		'Thank you for contacting us, we will be in touch shortly.' => 'Merci de nous avoir écrit. Nous communiquerons avec vous sous peu.',
 	);
 
 	return isset( $strings[ $text ] ) ? $strings[ $text ] : $translation;
