@@ -35,6 +35,7 @@ require_once get_template_directory() . '/inc/page-images.php';
 require_once get_template_directory() . '/inc/page-form.php';
 require_once get_template_directory() . '/inc/language-link.php';
 require_once get_template_directory() . '/inc/demo-post.php';
+require_once get_template_directory() . '/inc/blog-seed.php';
 
 /* -------------------------------------------------------------------------
  * Setup
@@ -766,6 +767,9 @@ function uottawa_first_run() {
 	// Un vrai billet de blogue, pour que la rangée d'actualités et la mise en
 	// page d'un billet aient quelque chose à montrer sur un site encore vide.
 	uottawa_demo_post();
+
+	// The five blog posts, which could not come over through the importer.
+	uottawa_blog_seed();
 
 	// Pretty permalinks, unless the site already has a structure set.
 	if ( ! get_option( 'permalink_structure' ) ) {
