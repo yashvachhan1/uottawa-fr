@@ -3,7 +3,7 @@ Theme Name: uOttawa En ligne
 Theme URI: https://enligne.uottawa.ca
 Author: uOttawa Online
 Description: French companion to the uOttawa Online theme. Same design and templates; the copy is in French.
-Version: 1.13.30
+Version: 1.13.31
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -26,32 +26,23 @@ This file only carries the theme header WordPress reads.
 
 /* The header holds a menu, a language switch and two buttons, and the French
    labels run about 150px longer than the English ones. Rather than collapse
-   the whole row early, tighten the space between the menu items first: the
-   design's 65px gap is generous, and 40px keeps the row readable while
-   buying back the width. With that it holds together to about 1450px.
+   the whole row early, tighten the space between the menu items: the
+   design's 65px gap is generous, and taking it down buys back the width the
+   longer labels need.
 
-   A 1920 screen at 125% display scaling reports 1536 CSS pixels, which is
-   where this was being hit. */
+   It used to collapse here at 1450px while the English site held on to
+   1250px, so the two sites grew their hamburger at different widths. With
+   the gaps tightened the French row holds together to 1250px as well, and
+   the collapse itself is left to mobile.css, which both sites share - so
+   there is one breakpoint rather than two, and the menu inside it is styled
+   the same on both. */
 @media (max-width:1700px){
   .nav ul{ gap:clamp(20px, 2.2vw, 40px); }
 }
 
 @media (max-width:1450px){
-  .site-header .container{ flex-wrap:wrap; }
-
-  .nav,
-  .header-actions,
-  .header-lang{ display:none; }
-  .nav-toggle{ display:flex; margin-left:auto; }
-
-  .site-header.is-open .nav,
-  .site-header.is-open .header-actions,
-  .site-header.is-open .header-lang{
-    display:flex;
-    flex-basis:100%;
-  }
-  .site-header.is-open .nav{ order:2; margin-left:0; padding-top:16px; }
-  .site-header.is-open .nav ul{ flex-direction:column; gap:14px; }
-  .site-header.is-open .header-actions{ order:3; padding-top:16px; }
-  .site-header.is-open .header-lang{ order:4; margin-left:0; padding:14px 0 16px; }
+  .nav ul{ gap:clamp(12px, 1.4vw, 24px); }
+  /* The row's own gaps come in too, so a menu carrying a fourth item still
+     holds together down to where the header collapses. */
+  .site-header .container{ gap:16px; }
 }
