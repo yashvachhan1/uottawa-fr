@@ -100,7 +100,7 @@ get_header();
       </article>
       <article class="reason-card">
         <h4>Un réseau qui va plus loin</h4>
-        <p>La communauté étudiante réunit des personnes de partout au Canada aux parcours professionnels et universitaires variés. La diversité des parcours favorise les échanges et enrichit votre expérience d’apprentissage. Votre réseau professionnel s’ouvre également sur la communauté internationale de l’Université d’Ottawa, qui compte plus de 200 000 membres.</p>
+        <p>La communauté étudiante réunit des personnes de partout au Canada aux parcours professionnels et universitaires variés. La diversité des parcours favorise les échanges et enrichit votre expérience d’apprentissage. Votre réseau professionnel s’ouvre également sur la communauté internationale de l’Université d’Ottawa, qui compte plus de 300 000 membres.</p>
       </article>
       <article class="reason-card">
         <h4>Un parcours qui reconnaît vos acquis</h4>
