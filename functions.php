@@ -607,7 +607,7 @@ function uottawa_article_card( $card ) {
 			<h3 class="article-card__title"><?php echo esc_html( $card['title'] ); ?></h3>
 			<p class="article-card__excerpt"><?php echo esc_html( $card['excerpt'] ); ?></p>
 			<p class="article-card__meta"><?php echo esc_html( $card['meta'] ); ?></p>
-			<a class="btn btn--red btn--read" href="<?php echo esc_url( $card['url'] ); ?>"><?php esc_html_e( 'Lire la suite', 'uottawa-online-fr' ); ?></a>
+			<a class="btn btn--red btn--read" href="<?php echo esc_url( $card['url'] ); ?>"><?php echo esc_html( uottawa_read_more_text() ); ?></a>
 		</div>
 	</article>
 	<?php
@@ -1031,6 +1031,18 @@ function uottawa_privacy_page() {
 }
 
 /**
+ * What the button on an article card says.
+ *
+ * It appears on every card on two pages, so it is set once under
+ * Appearance > Customize rather than being written into each template.
+ */
+function uottawa_read_more_text() {
+	$set = trim( (string) get_theme_mod( 'uottawa_read_more', '' ) );
+
+	return '' !== $set ? $set : __( 'Lire la suite', 'uottawa-online-fr' );
+}
+
+/**
  * Where "Accessibility" points. Empty by default, so it reads as plain text
  * until there is a page to send people to.
  */
@@ -1056,6 +1068,7 @@ function uottawa_customize( $wp_customize ) {
 	$fields = array(
 		'uottawa_apply_url'    => array( __( '"Apply now" link', 'uottawa-online-fr' ), 'https://www.uottawa.ca/etudes/faire-demande-admission' ),
 		'uottawa_request_url'  => array( __( '"Request info" link', 'uottawa-online-fr' ), '/contact/' ),
+		'uottawa_read_more'    => array( __( '"Lire la suite" button text', 'uottawa-online-fr' ), 'Lire la suite' ),
 		'uottawa_footer_text'  => array( __( 'Footer text', 'uottawa-online-fr' ), '© Université d’Ottawa  |  Confidentialité  |  Accessibilité' ),
 		'uottawa_privacy_url'  => array( __( '"Privacy" link (blank: the site&rsquo;s privacy page)', 'uottawa-online-fr' ), '' ),
 		'uottawa_accessibility_url' => array( __( '"Accessibility" link (blank: not a link)', 'uottawa-online-fr' ), '' ),
