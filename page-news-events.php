@@ -49,20 +49,34 @@ get_header();
   <div class="container">
     <h2 class="section-title">Articles récents</h2>
 
-    <p class="filter-bar">
+    <?php
+    // Every category that actually has something in it. Nothing to choose
+    // between means no point offering the choice.
+    $uottawa_cats = get_categories( array( 'hide_empty' => true ) );
+    ?>
+    <div class="filter-bar" data-filter>
       <span class="filter-bar__label">Filtrer par :</span>
-      <a class="is-active" href="#">Tous les programmes</a>
-      <a href="#">Sujet</a>
-    </p>
+
+      <label class="screen-reader-text" for="filter-category"><?php esc_html_e( 'Filtrer par programme', 'uottawa-online-fr' ); ?></label>
+      <select class="filter-bar__select" id="filter-category" data-filter-category>
+        <option value=""><?php esc_html_e( 'Tous les programmes', 'uottawa-online-fr' ); ?></option>
+        <?php foreach ( $uottawa_cats as $uottawa_cat ) : ?>
+          <option value="<?php echo esc_attr( $uottawa_cat->slug ); ?>"><?php echo esc_html( $uottawa_cat->name ); ?></option>
+        <?php endforeach; ?>
+      </select>
+
+      <label class="screen-reader-text" for="filter-topic"><?php esc_html_e( 'Rechercher par sujet', 'uottawa-online-fr' ); ?></label>
+      <input class="filter-bar__search" id="filter-topic" type="search" data-filter-topic
+        placeholder="<?php esc_attr_e( 'Sujet', 'uottawa-online-fr' ); ?>" autocomplete="off">
+    </div>
 
     <div class="articles-grid articles-grid--3">
       <?php
       uottawa_article_cards(
         array(
-          'count'  => 3,
-          // The three most recently published, which is what the heading
-          // says. It overlaps the featured row while there are only a few
-          // posts, and stops doing so as more are written.
+          // Every post, because the filter above the row is what narrows it.
+          // A filter over a fixed three would have nothing to do.
+          'count'  => -1,
           'offset' => 0,
           'labels' => array(
             'kicker'  => '[Program]',
@@ -75,6 +89,8 @@ get_header();
       ?>
 
     </div>
+
+    <p class="filter-bar__empty" data-filter-empty hidden><?php esc_html_e( 'Aucun article ne correspond. Essayez un autre programme ou un autre mot.', 'uottawa-online-fr' ); ?></p>
   </div>
 </section>
 
