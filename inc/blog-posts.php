@@ -1076,7 +1076,7 @@ HTML,
 HTML,
 		),
 		array(
-			'title'   => 'Looking for degree completion programs? Here’s why an interdisciplinary degree is a great choice',
+			'title'   => 'Looking for degree completion programs? Here’s why an Interdisciplinary degree is a great choice',
 			'slug'    => 'interdisciplinary-degree-completion-programs',
 			'date'    => '2026-11-13 09:58:56',
 			'thumb'   => 'uOttawa-Blog-4-Feature-Image.webp',
