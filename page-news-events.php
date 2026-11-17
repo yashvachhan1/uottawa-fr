@@ -70,24 +70,36 @@ get_header();
         placeholder="<?php esc_attr_e( 'Sujet', 'uottawa-online-fr' ); ?>" autocomplete="off">
     </div>
 
-    <div class="articles-grid articles-grid--3">
-      <?php
-      uottawa_article_cards(
-        array(
-          // Every post, because the filter above the row is what narrows it.
-          // A filter over a fixed three would have nothing to do.
-          'count'  => -1,
-          'offset' => 0,
-          'labels' => array(
-            'kicker'  => '[Program]',
-            'title'   => '[Title]',
-            'excerpt' => '[Description]',
-            'meta'    => 'By uOttawa Online Team | [Date]',
-          ),
-        )
-      );
-      ?>
+    <div class="carousel" data-carousel>
+      <button class="carousel__arrow carousel__arrow--prev" type="button"
+        data-carousel-prev aria-label="<?php esc_attr_e( 'Articles précédents', 'uottawa-online-fr' ); ?>">
+        <span aria-hidden="true"></span>
+      </button>
 
+      <div class="articles-grid articles-grid--3 carousel__track" data-carousel-track>
+        <?php
+        uottawa_article_cards(
+          array(
+            // Every post, because the filter above the row is what narrows it.
+            // A filter over a fixed three would have nothing to do.
+            'count'  => -1,
+            'offset' => 0,
+            'labels' => array(
+              'kicker'  => '[Program]',
+              'title'   => '[Title]',
+              'excerpt' => '[Description]',
+              'meta'    => 'By uOttawa Online Team | [Date]',
+            ),
+          )
+        );
+        ?>
+
+      </div>
+
+      <button class="carousel__arrow carousel__arrow--next" type="button"
+        data-carousel-next aria-label="<?php esc_attr_e( 'Articles suivants', 'uottawa-online-fr' ); ?>">
+        <span aria-hidden="true"></span>
+      </button>
     </div>
 
     <p class="filter-bar__empty" data-filter-empty hidden><?php esc_html_e( 'Aucun article ne correspond. Essayez un autre programme ou un autre mot.', 'uottawa-online-fr' ); ?></p>
