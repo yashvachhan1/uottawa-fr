@@ -614,7 +614,7 @@ function uottawa_article_cards( $args = array() ) {
 				   written in English and kept there, and a card half in one
 				   language and half in the other reads as a mistake. */
 				__( 'By %1$s | %2$s', 'uottawa-online-fr' ),
-				get_the_author(),
+				uottawa_byline_name(),
 				get_the_date()
 			);
 
@@ -1139,6 +1139,20 @@ function uottawa_gtm() {
 add_action( 'wp_head', 'uottawa_gtm', 1 );
 
 /**
+ * The name on an article card's byline.
+ *
+ * Taken from the post's author, unless a name is set under Appearance >
+ * Customize. The French site sets one: its user is named in French, and the
+ * cards stand for English posts, so a French name there would be the one
+ * word on the card that did not match the post it points at.
+ */
+function uottawa_byline_name() {
+	$set = trim( (string) get_theme_mod( 'uottawa_byline_name', 'uOttawa Online' ) );
+
+	return '' !== $set ? $set : get_the_author();
+}
+
+/**
  * What the button on an article card says.
  *
  * It appears on every card on two pages, so it is set once under
@@ -1178,6 +1192,7 @@ function uottawa_customize( $wp_customize ) {
 	$fields = array(
 		'uottawa_apply_url'    => array( __( '"Apply now" link', 'uottawa-online-fr' ), 'https://www.uottawa.ca/etudes/faire-demande-admission' ),
 		'uottawa_request_url'  => array( __( '"Request info" link', 'uottawa-online-fr' ), '/contact/' ),
+		'uottawa_byline_name'  => array( __( 'Name on an article card byline (blank: the post&rsquo;s author)', 'uottawa-online-fr' ), 'uOttawa Online' ),
 		'uottawa_gtm_id'       => array( __( 'Google Tag Manager ID (GTM-XXXXXXX)', 'uottawa-online-fr' ), '' ),
 		'uottawa_read_more'    => array( __( '"Lire la suite" button text', 'uottawa-online-fr' ), 'Lire la suite' ),
 		'uottawa_footer_text'  => array( __( 'Footer text', 'uottawa-online-fr' ), '© Université d’Ottawa  |  Confidentialité  |  Accessibilité' ),
