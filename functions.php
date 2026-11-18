@@ -609,8 +609,11 @@ function uottawa_article_cards( $args = array() ) {
 			$terms  = get_the_category();
 			$kicker = $terms ? $terms[0]->name : $args['labels']['kicker'];
 			$meta   = sprintf(
-				/* translators: 1: author name, 2: publish date */
-				__( 'Par %1$s | %2$s', 'uottawa-online-fr' ),
+				/* translators: 1: author name, 2: publish date.
+				   English on the French site on purpose: the posts are
+				   written in English and kept there, and a card half in one
+				   language and half in the other reads as a mistake. */
+				__( 'By %1$s | %2$s', 'uottawa-online-fr' ),
 				get_the_author(),
 				get_the_date()
 			);
@@ -653,20 +656,28 @@ function uottawa_article_card( $card ) {
 	// on whatever the design happens to show rather than on the post.
 	$terms = isset( $card['terms'] ) ? $card['terms'] : '';
 	$text  = isset( $card['text'] ) ? $card['text'] : '';
+
+	// The picture and the title go to the same place as the button. People
+	// reach for the picture or the headline before they look for a button,
+	// and a card that only answers in one place reads as broken.
+	$link = 'href="' . esc_url( $card['url'] ) . '"' . ( isset( $card['atts'] ) ? $card['atts'] : '' );
 	?>
 	<article class="article-card"
 		data-terms="<?php echo esc_attr( $terms ); ?>"
 		data-text="<?php echo esc_attr( $text ); ?>">
-		<div class="article-card__media">
+		<a class="article-card__media" <?php echo $link; // phpcs:ignore WordPress.Security.EscapeOutput ?>
+			tabindex="-1" aria-hidden="true">
 			<?php if ( $card['media'] ) : ?>
 				<?php echo wp_kses_post( $card['media'] ); ?>
 			<?php else : ?>
 				<span class="article-card__placeholder"><?php esc_html_e( '[Image à venir]', 'uottawa-online-fr' ); ?></span>
 			<?php endif; ?>
-		</div>
+		</a>
 		<div class="article-card__body">
 			<p class="article-card__kicker"><?php echo esc_html( $card['kicker'] ); ?></p>
-			<h3 class="article-card__title"><?php echo esc_html( $card['title'] ); ?></h3>
+			<h3 class="article-card__title">
+				<a <?php echo $link; // phpcs:ignore WordPress.Security.EscapeOutput ?>><?php echo esc_html( $card['title'] ); ?></a>
+			</h3>
 			<p class="article-card__excerpt"><?php echo esc_html( $card['excerpt'] ); ?></p>
 			<p class="article-card__meta"><?php echo esc_html( $card['meta'] ); ?></p>
 			<a class="btn btn--red btn--read" href="<?php echo esc_url( $card['url'] ); ?>"<?php echo isset( $card['atts'] ) ? $card['atts'] : ''; // phpcs:ignore WordPress.Security.EscapeOutput ?>><?php echo esc_html( uottawa_read_more_text() ); ?></a>
@@ -1136,7 +1147,9 @@ add_action( 'wp_head', 'uottawa_gtm', 1 );
 function uottawa_read_more_text() {
 	$set = trim( (string) get_theme_mod( 'uottawa_read_more', '' ) );
 
-	return '' !== $set ? $set : __( 'Lire la suite', 'uottawa-online-fr' );
+	// English, for the same reason the byline is: the card stands for an
+	// English post. Appearance > Customize overrides it either way.
+	return '' !== $set ? $set : __( 'Read more', 'uottawa-online-fr' );
 }
 
 /**
